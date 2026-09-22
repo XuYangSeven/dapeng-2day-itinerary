@@ -48,7 +48,7 @@
     .location-mode{display:none;position:absolute;z-index:9030;left:18px;right:18px;bottom:18px;padding:12px 14px;border-radius:14px;background:rgba(24,33,41,.9);color:#fff;box-shadow:0 10px 28px rgba(24,76,66,.2);font-size:12px;align-items:center;justify-content:space-between;gap:10px}.location-mode.show{display:flex}.location-mode .btn{min-height:34px;padding:5px 10px;background:#fff;color:var(--ink)}
   /* 腾讯地图会在 #map 内部注入 z-index:1000 的全屏覆盖层（缩放控件所在层），
      地图面板内的所有浮层必须高于该值，否则点击会被覆盖层截获。 */
-  .map-search{position:absolute;z-index:9010;left:18px;right:18px;top:78px;display:flex;gap:8px;align-items:flex-start}.map-search-box{position:relative;flex:1;min-width:0}.map-search-box input{width:100%;height:42px;border:1px solid rgba(255,255,255,.85);border-radius:12px;background:rgba(255,255,255,.94);box-shadow:var(--shadow-sm);padding:0 13px;color:var(--ink);font:13px 'Noto Sans SC';outline:0}.map-search-box input:focus{border-color:var(--mint-deep);box-shadow:0 0 0 3px rgba(29,140,115,.15),var(--shadow-sm)}.map-search .btn{height:42px;background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:var(--shadow-sm);white-space:nowrap}.search-results{display:none;position:absolute;left:0;right:0;top:48px;max-height:270px;overflow:auto;padding:5px;background:rgba(255,255,255,.97);border:1px solid rgba(219,232,226,.95);border-radius:13px;box-shadow:var(--shadow);z-index:9020}.search-results.show{display:block}.search-result{display:block;width:100%;padding:10px 11px;border:0;border-bottom:1px solid #edf2f0;background:transparent;text-align:left;color:var(--ink);cursor:pointer;font:12px/1.5 'Noto Sans SC'}.search-result:last-child{border-bottom:0}.search-result:hover,.search-result:focus{background:#eff9f5;outline:0}.search-result strong{display:block;font-size:13px}.search-result span{display:block;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.search-status{font-size:11px;color:#6f7e83;padding:8px 10px}.search-pin{position:absolute;z-index:7;pointer-events:none;transform:translate(-50%,-100%);background:var(--orange);color:#fff;border:2px solid #fff;border-radius:999px;padding:5px 8px;font:600 11px 'Noto Sans SC';box-shadow:0 5px 14px rgba(180,78,57,.25)}
+  .map-search{position:absolute;z-index:9010;left:18px;right:18px;top:78px;display:flex;gap:8px;align-items:flex-start}.map-search-box{position:relative;flex:1;min-width:0}.map-search-box input{width:100%;height:42px;border:1px solid rgba(255,255,255,.85);border-radius:12px;background:rgba(255,255,255,.94);box-shadow:var(--shadow-sm);padding:0 13px;color:var(--ink);font:13px 'Noto Sans SC';outline:0}.map-search-box input:focus{border-color:var(--mint-deep);box-shadow:0 0 0 3px rgba(29,140,115,.15),var(--shadow-sm)}.map-search .btn{height:42px;background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:var(--shadow-sm);white-space:nowrap}.search-results{display:none;position:absolute;left:0;right:0;top:48px;max-height:270px;overflow:auto;padding:5px;background:rgba(255,255,255,.97);border:1px solid rgba(219,232,226,.95);border-radius:13px;box-shadow:var(--shadow);z-index:9020}.search-results.show{display:block}.search-result{display:block;width:100%;padding:10px 11px;border:0;border-bottom:1px solid #edf2f0;background:transparent;text-align:left;color:var(--ink);cursor:pointer;font:12px/1.5 'Noto Sans SC'}.search-result:last-child{border-bottom:0}.search-result:hover,.search-result:focus{background:#eff9f5;outline:0}.search-result strong{display:block;font-size:13px}.search-result span{display:block;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.search-status{font-size:11px;color:#6f7e83;padding:8px 10px}.search-pin{position:absolute;z-index:7;pointer-events:none;transform:translate(-50%,-100%);background:var(--orange);color:#fff;border:2px solid #fff;border-radius:999px;padding:5px 8px;font:600 11px 'Noto Sans SC';box-shadow:0 5px 14px rgba(180,78,57,.25)}em.tag-precise{display:inline-block;margin-left:5px;padding:0 5px;border-radius:6px;background:rgba(29,140,115,.13);color:#1d8c73;font-size:9px;font-style:normal;font-weight:500;vertical-align:1px}
     .note{margin:25px 0 60px;padding:22px 24px;border-left:3px solid var(--orange);background:rgba(255,255,255,.56);border-radius:0 16px 16px 0;color:#627173;font-size:13px}.note strong{color:var(--ink)} footer{padding:30px 0 60px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#7c8a8c;font-size:12px}.sources a{color:#3c786f;text-decoration:none;border-bottom:1px solid #a9d6c8}
     .reveal{opacity:0;transform:translateY(18px)}.reveal.in{opacity:1;transform:none;transition:opacity .6s var(--ease),transform .6s var(--ease)}
     @media(max-width:1000px){.wrap{width:min(100% - 32px,720px)}.hero{grid-template-columns:1fr;gap:32px}.hero h1{font-size:clamp(56px,14vw,100px)}.workspace{grid-template-columns:1fr}.map-panel{position:relative;top:auto;height:520px;order:-1}.timeline-panel{min-height:0}.timeline:before{left:75px}.edit-panel{order:2}}
@@ -68,7 +68,7 @@
       <div class="timeline-panel"><div class="day-heading"><div><h2 id="day-title">DAY 01 / 暗夜抵达</h2><p id="day-subtitle">周四 24 日 · 先睡好，再看星星</p></div><div class="mono" id="day-distance">约 38 km</div></div><div class="timeline" id="timeline"></div>
         <aside class="edit-panel" aria-label="行程编辑器"><div class="edit-toolbar"><h3>编辑行程</h3><span class="edit-status" id="edit-status">修改会自动保存在本机</span></div>
           <form class="edit-form" id="edit-form"><div class="edit-place-search"><input id="edit-place-search-input" type="search" autocomplete="off" placeholder="先搜索地点，再直接选中填入当前编辑项" aria-label="搜索并选择地点"><button class="btn" id="edit-place-search-btn" type="button">搜索地点</button></div><div class="edit-search-results" id="edit-search-results" role="listbox" aria-label="地点搜索结果"></div><label>时间<input id="edit-time" type="time" required></label><label>分类<select id="edit-type"><option>景点</option><option>美食</option><option>文化</option><option>购物</option><option>住宿</option><option>出发</option></select></label><label class="full">地点名称<input id="edit-name" type="text" required placeholder="例如：西涌 3 号沙滩"></label><label class="full">行程说明<textarea id="edit-desc" placeholder="写下玩法、注意事项或预订信息"></textarea></label><label class="full">时长 / 预算说明<input id="edit-meta" type="text" placeholder="例如：人均约 ¥80 · 45 min"></label><label class="full">定位坐标（腾讯地图 GCJ-02）<span class="coord-row"><input id="edit-lat" type="number" step="0.000001" min="-90" max="90" required placeholder="纬度 lat"><input id="edit-lng" type="number" step="0.000001" min="-180" max="180" required placeholder="经度 lng"></span></label></form>
-          <div class="edit-actions"><button class="btn primary" id="save-point" type="button">保存修改</button><button class="btn" id="pick-map" type="button">在地图上选点</button><button class="btn" id="use-location" type="button">使用当前位置</button><button class="btn" id="add-point" type="button">新增地点</button><button class="btn warn" id="reset-data" type="button">恢复原行程</button></div><p class="edit-hint">点击左侧行程卡片或下方列表进入编辑；地图选点后再点“保存修改”。本机保存后，可用下方 GitHub 同步保存到仓库。</p><div class="edit-list" id="edit-list"></div><div class="github-sync tmap-setup" aria-label="地图搜索服务设置"><div class="github-sync-title"><span>地图搜索服务</span><span class="github-sync-status" id="tmap-setup-status">检测中…</span></div><div class="github-sync-grid"><input id="tmap-key" class="full" type="text" autocomplete="off" placeholder="腾讯地图 Key（可选，只保存在本机）"></div><div class="github-sync-actions"><button class="btn primary" id="tmap-key-save" type="button">保存并应用</button><button class="btn" id="tmap-key-clear" type="button">清除</button></div><p class="github-sync-hint"><b>搜索默认就能用</b>：免密钥走 OpenStreetMap 检索，并内置 48 个大鹏 / 深圳常用地点，无需任何配置。<br>想让结果更准（小店、民宿等新地点），或去掉底图上那条「鉴权失败」提示，可再填一次自己的腾讯地图 Key：<br>① 打开 <span class="mono">lbs.qq.com</span> → 控制台 → 应用管理 → 我的应用 → 创建应用；<br>② 在应用里「添加 Key」，勾选 <b>WebServiceAPI</b> 与 <b>Web端(JS API)</b>（两个都要勾）；<br>③ 把生成的 Key 粘到上面的输入框，点「保存并应用」，页面会自动刷新。<br>Key 只存在本机浏览器，不写进网页也不进仓库。域名白名单可填 <span class="mono">xuyangseven.github.io</span>（填了就只能在该域名用），留空则不限来源。Key 只存在当前浏览器，不写入网页也不进入仓库；在 WorkBuddy 预览里打开时本机自带地图服务，无需 Key。</p></div><div class="github-sync" aria-label="GitHub 同步"><div class="github-sync-title"><span>GitHub 同步</span><span class="github-sync-status" id="github-sync-status">未连接</span></div><div class="github-sync-grid"><input id="github-owner" class="full" type="text" value="XuYangSeven" placeholder="GitHub 用户名"><input id="github-repo" class="full" type="text" value="dapeng-2day-itinerary" placeholder="仓库名"><input id="github-token" class="full" type="password" autocomplete="off" placeholder="GitHub Token（只保存在本机）"><input id="github-path" class="full" type="text" value="data/itinerary.json" placeholder="仓库内数据文件路径"><input id="github-api-base" class="full" type="text" placeholder="API 地址（留空＝官方 api.github.com）"></div><div class="github-sync-actions"><button class="btn" id="github-load" type="button">从 GitHub 读取</button><button class="btn primary" id="github-save" type="button">同步到 GitHub</button><button class="btn" id="github-diag" type="button">连接诊断</button></div><div class="github-diag" id="github-diag-out" hidden></div><p class="github-sync-hint">不填 Token 也能查看：打开页面会自动从公开仓库读取最新行程（只读）。要保存修改，需创建 GitHub Fine-grained Token，仅授予本仓库 <b>Contents: Read and write</b> 权限，粘贴后即生效；Token 只存在当前浏览器，不写入网页或仓库。填写后编辑内容会停止输入约 1 秒自动保存到本机并同步到 GitHub 的 <span class="mono">data/itinerary.json</span>，换手机打开同一链接即可查看与继续修改。<br>写入必须能连上官方 <span class="mono">api.github.com</span>：出现「同步失败（已存本机）」说明请求根本没到达 GitHub（与 Token 无关，Token 错会显示 401/403），内容已存本机，换 Wi-Fi 或移动网络后点「同步到 GitHub」即可补传。读取在官方不可达时会自动改用镜像通道，点「连接诊断」可逐条确认。</p></div>
+          <div class="edit-actions"><button class="btn primary" id="save-point" type="button">保存修改</button><button class="btn" id="pick-map" type="button">在地图上选点</button><button class="btn" id="use-location" type="button">使用当前位置</button><button class="btn" id="add-point" type="button">新增地点</button><button class="btn warn" id="reset-data" type="button">恢复原行程</button></div><p class="edit-hint">点击左侧行程卡片或下方列表进入编辑；地图选点后再点“保存修改”。本机保存后，可用下方 GitHub 同步保存到仓库。</p><div class="edit-list" id="edit-list"></div><div class="github-sync tmap-setup" aria-label="地图搜索服务设置"><div class="github-sync-title"><span>地图搜索服务</span><span class="github-sync-status" id="tmap-setup-status">检测中…</span></div><div class="github-sync-grid"><input id="tmap-key" class="full" type="text" autocomplete="off" placeholder="腾讯地图 Key（可选，只保存在本机）"></div><div class="github-sync-actions"><button class="btn primary" id="tmap-key-save" type="button">保存并应用</button><button class="btn" id="tmap-key-clear" type="button">清除</button></div><p class="github-sync-hint"><b>搜索默认就能用，且只会给出深圳的地点</b>：在线走 OpenStreetMap（免密钥），并内置 164 个深圳 / 大鹏常用地点（逐条核对过坐标），结果里带「内置精确点」标记的会优先显示。检索限定深圳靠的是行政区字段（而不是经纬度范围），所以像虎门、松山湖、凤岗、惠州澳头这些贴着边界的同名地点会被过滤掉，同时深圳大鹏新区自己那个「澳头」不会被误伤；底图上原有的鉴权提示条也已自动隐藏，无需处理。<br>想让检索覆盖更全（小店、新开民宿等），可再填一次自己的腾讯地图 Key（可选）：<br>① 打开 <span class="mono">lbs.qq.com</span> → 控制台 → 应用管理 → 我的应用 → 创建应用；<br>② 在应用里「添加 Key」，勾选 <b>WebServiceAPI</b> 与 <b>Web端(JS API)</b>（两个都要勾）；<br>③ 把生成的 Key 粘到上面的输入框，点「保存并应用」，页面会自动刷新。<br>Key 只存在本机浏览器，不写进网页也不进仓库；域名白名单可填 <span class="mono">xuyangseven.github.io</span>（填了就只能在该域名用），留空则不限来源；在 WorkBuddy 预览里打开时本机自带地图服务，同样无需 Key。</p></div><div class="github-sync" aria-label="GitHub 同步"><div class="github-sync-title"><span>GitHub 同步</span><span class="github-sync-status" id="github-sync-status">未连接</span></div><div class="github-sync-grid"><input id="github-owner" class="full" type="text" value="XuYangSeven" placeholder="GitHub 用户名"><input id="github-repo" class="full" type="text" value="dapeng-2day-itinerary" placeholder="仓库名"><input id="github-token" class="full" type="password" autocomplete="off" placeholder="GitHub Token（只保存在本机）"><input id="github-path" class="full" type="text" value="data/itinerary.json" placeholder="仓库内数据文件路径"><input id="github-api-base" class="full" type="text" placeholder="API 地址（留空＝官方 api.github.com）"></div><div class="github-sync-actions"><button class="btn" id="github-load" type="button">从 GitHub 读取</button><button class="btn primary" id="github-save" type="button">同步到 GitHub</button><button class="btn" id="github-diag" type="button">连接诊断</button></div><div class="github-diag" id="github-diag-out" hidden></div><p class="github-sync-hint">不填 Token 也能查看：打开页面会自动从公开仓库读取最新行程（只读）。要保存修改，需创建 GitHub Fine-grained Token，仅授予本仓库 <b>Contents: Read and write</b> 权限，粘贴后即生效；Token 只存在当前浏览器，不写入网页或仓库。填写后编辑内容会停止输入约 1 秒自动保存到本机并同步到 GitHub 的 <span class="mono">data/itinerary.json</span>，换手机打开同一链接即可查看与继续修改。<br>写入必须能连上官方 <span class="mono">api.github.com</span>：出现「同步失败（已存本机）」说明请求根本没到达 GitHub（与 Token 无关，Token 错会显示 401/403），内容已存本机，换 Wi-Fi 或移动网络后点「同步到 GitHub」即可补传。读取在官方不可达时会自动改用镜像通道，点「连接诊断」可逐条确认。</p></div>
         </aside>
       </div>
       <div class="map-panel"><div class="map-head"><div class="map-label"><b id="map-title">西涌 · 暗夜社区</b><span id="map-caption">按顺序串起今晚的 5 个落点</span></div><div class="map-legend"><span><i class="legend-dot n"></i>景点</span><span><i class="legend-dot f"></i>美食</span><span><i class="legend-dot c"></i>文化</span></div></div><div id="map"></div><div class="map-fallback" id="map-fallback">腾讯地图正在加载 · 底图不可用时可正常编辑行程与使用 GitHub 同步</div><div class="map-search" aria-label="搜索地点"><div class="map-search-box"><input id="map-search-input" type="search" autocomplete="off" placeholder="搜索地点，例如：杨梅坑、咖啡、酒店" aria-label="搜索地点"><div class="search-results" id="search-results" role="listbox"></div></div><button class="btn" type="button" id="map-search-btn">搜索</button></div><div class="location-mode" id="location-mode"><span>定位模式：点击地图选择新坐标</span><button class="btn" type="button" id="cancel-pick">取消</button></div></div>
@@ -106,7 +106,7 @@
     const TMAP_WS='https://apis.map.qq.com/ws';
     function tmapUserKey(){try{return (localStorage.getItem(TMAP_KEY)||'').trim()}catch(e){return ''}}
     function tmapStatusHint(status){const m={110:'Key 未授权当前来源，需在控制台配置域名白名单',111:'签名校验失败',112:'请求 IP 未被授权',113:'Key 未开通该功能',120:'Key 调用量已超限',199:'该 Key 未开启 WebServiceAPI 功能',300:'缺少 Key',301:'Key 格式错误',311:'Key 格式错误'};return m[status]||''}
-    function tmapSetupStatus(){const el=$('#tmap-key'),st=$('#tmap-setup-status');if(!el)return;const k=tmapUserKey();el.value=k;st.textContent=proxyHost()?'宿主代理已接入，无需 Key':(k?'已填入 Key：底图鉴权与检索均走腾讯':'未填 Key（搜索已可免密钥使用）')}
+    function tmapSetupStatus(){const el=$('#tmap-key'),st=$('#tmap-setup-status');if(!el)return;const k=tmapUserKey();el.value=k;st.textContent=proxyHost()?'宿主代理已接入，无需 Key':(k?'已填入 Key：底图鉴权与检索均走腾讯':'未填 Key（免密钥检索可用，结果限深圳）')}
     const GH_CHANNEL_KEY='dapeng-2day-gh-channel-v1';
     const GH_API_DEFAULT='https://api.github.com';
     const GH_BRANCH='main';
@@ -212,64 +212,182 @@
     function focusPoint(i){const p=days[currentDay].points[i];if(map&&window.TMap){map.easeTo({center:new TMap.LatLng(p.lat,p.lng),zoom:14.3});if(infoWindow)infoWindow.close();infoWindow=new TMap.InfoWindow({map,position:new TMap.LatLng(p.lat,p.lng),content:`<div style="padding:8px 10px;font:13px 'Noto Sans SC';color:#182129"><b>${escapeHtml(p.time)} · ${escapeHtml(p.name)}</b><br><span style="color:#6f7e83">${escapeHtml(p.meta)}</span></div>`});}}
     function setSearchStatus(text){const box=$('#search-results');box.innerHTML=`<div class="search-status">${escapeHtml(text)}</div>`;box.classList.add('show')}
     function closeSearchResults(){const box=$('#search-results');box.classList.remove('show');box.innerHTML=''}
-    function renderSearchResults(items){const box=$('#search-results');if(!items.length){setSearchStatus('没有找到匹配地点，换个关键词试试');return}box.innerHTML=items.map((p,i)=>`<button class="search-result" type="button" data-search-index="${i}" role="option"><strong>${escapeHtml(p.title||'未命名地点')}</strong><span>${escapeHtml(p.address||p.category||'腾讯地图 POI')}</span></button>`).join('');box.classList.add('show');box.querySelectorAll('[data-search-index]').forEach(btn=>btn.addEventListener('click',()=>chooseSearchResult(items[+btn.dataset.searchIndex])))}
+    function renderSearchResults(items){const box=$('#search-results');if(!items.length){setSearchStatus('没有找到匹配地点，换个关键词试试');return}box.innerHTML=items.map((p,i)=>`<button class="search-result" type="button" data-search-index="${i}" role="option"><strong>${escapeHtml(p.title||'未命名地点')}${p.builtin?'<em class="tag-precise">内置精确点</em>':''}</strong><span>${escapeHtml(p.address||p.category||'腾讯地图 POI')}</span></button>`).join('');box.classList.add('show');box.querySelectorAll('[data-search-index]').forEach(btn=>btn.addEventListener('click',()=>chooseSearchResult(items[+btn.dataset.searchIndex])))}
     function showSearchResult(p){if(!map||!window.TMap||!p.location)return;const lat=Number(p.location.lat),lng=Number(p.location.lng);if(!Number.isFinite(lat)||!Number.isFinite(lng))return;const position=new TMap.LatLng(lat,lng);map.easeTo({center:position,zoom:15});if(searchMarkerLayer){searchMarkerLayer.setGeometries([{id:'search',styleId:'search',position,properties:{title:p.title}}])}else{searchMarkerLayer=new TMap.MultiMarker({map,styles:{search:new TMap.MarkerStyle({width:32,height:40,anchor:{x:16,y:38},src:'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="40"><path d="M16 1C8 1 2 7 2 14.8 2 24 16 38 16 38s14-14 14-23.2C30 7 24 1 16 1z" fill="#ff765b" stroke="white" stroke-width="2"/><circle cx="16" cy="15" r="5" fill="white"/></svg>`)})},geometries:[{id:'search',styleId:'search',position,properties:{title:p.title}}]})}if(infoWindow)infoWindow.close();infoWindow=new TMap.InfoWindow({map,position,content:`<div style="padding:8px 10px;font:13px 'Noto Sans SC';color:#182129"><b>${escapeHtml(p.title||'搜索地点')}</b><br><span style="color:#6f7e83">${escapeHtml(p.address||'')}</span></div>`});closeSearchResults();setStatus(`已定位：${p.title||'搜索地点'}`)}
     function chooseSearchResult(p){showSearchResult(p)}
     function setEditSearchStatus(text){const box=$('#edit-search-results');box.innerHTML=`<div class="edit-search-status">${escapeHtml(text)}</div>`;box.classList.add('show')}
-    function renderEditSearchResults(items,note){const box=$('#edit-search-results');if(!items.length){setEditSearchStatus(note||'没有找到匹配地点');return}box.innerHTML=items.map((p,i)=>`<button class="edit-search-result" type="button" data-edit-search-index="${i}"><strong>${escapeHtml(p.title||'未命名地点')}</strong><span>${escapeHtml(p.address||p.category||'腾讯地图 POI')}</span></button>`).join('')+(note?`<div class="edit-search-status">${escapeHtml(note)}</div>`:'');box.classList.add('show');box.querySelectorAll('[data-edit-search-index]').forEach(btn=>btn.addEventListener('click',()=>selectEditSearchResult(items[+btn.dataset.editSearchIndex])))}
+    function renderEditSearchResults(items,note){const box=$('#edit-search-results');if(!items.length){setEditSearchStatus(note||'没有找到匹配地点');return}box.innerHTML=items.map((p,i)=>`<button class="edit-search-result" type="button" data-edit-search-index="${i}"><strong>${escapeHtml(p.title||'未命名地点')}${p.builtin?'<em class="tag-precise">内置精确点</em>':''}</strong><span>${escapeHtml(p.address||p.category||'腾讯地图 POI')}</span></button>`).join('')+(note?`<div class="edit-search-status">${escapeHtml(note)}</div>`:'');box.classList.add('show');box.querySelectorAll('[data-edit-search-index]').forEach(btn=>btn.addEventListener('click',()=>selectEditSearchResult(items[+btn.dataset.editSearchIndex])))}
     function selectEditSearchResult(p){if(!p||!p.location)return;const lat=Number(p.location.lat),lng=Number(p.location.lng);if(!Number.isFinite(lat)||!Number.isFinite(lng))return;$('#edit-name').value=p.title||'';$('#edit-meta').value=p.address||p.category||'';$('#edit-lat').value=lat.toFixed(6);$('#edit-lng').value=lng.toFixed(6);$('#edit-place-search-input').value=p.title||'';$('#edit-search-results').classList.remove('show');$('#edit-search-results').innerHTML='';setStatus(`已选中：${p.title||'地点'}，点击“保存修改”写入行程`);if(map){const position=new TMap.LatLng(lat,lng);map.easeTo({center:position,zoom:15});showSearchResult(p)}}
-    /* 内置常用地点库（离线可用，零依赖）：覆盖大鹏半岛与深圳市区高频检索点，共 48 条。
-       坐标为腾讯地图 GCJ-02；初始值取自 OpenStreetMap 的 WGS-84，经标准 GCJ-02 偏移算法换算。
-       k 为检索别名，便于用口语词（如「西冲」「过关」「露营」）命中。 */
+    /* 内置常用地点库（离线可用、零依赖）：大鹏半岛与深圳各区高频检索点，共 164 条。
+       坐标为腾讯地图 GCJ-02；取自 OpenStreetMap（WGS-84）经标准偏移算法换算，逐条核对过
+       与同名地点的偏差（中位数约 2 米）。已剔除市外同名点（东莞长安、香港离岛）与无检索
+       价值的细碎商户，只剩「真正会去的地方」。
+       k 为口语别名，便于用「西冲」「过关」「露营」等说法命中。 */
     const BUILTIN_PLACES=[
-      {n:'较场尾',lat:22.58598,lng:114.50926,a:'深圳市大鹏新区',t:'景点',k:'教场尾 海滩 民宿 沙滩'},
-      {n:'大鹏所城',lat:22.59499,lng:114.51237,a:'深圳市大鹏新区',t:'景点',k:'所城 古城 大鹏古城'},
-      {n:'西涌',lat:22.47342,lng:114.53558,a:'深圳市大鹏新区',t:'景点',k:'西冲 西涌沙滩 露营'},
-      {n:'东涌',lat:22.49319,lng:114.57371,a:'深圳市大鹏新区',t:'景点',k:'东冲 东涌沙滩'},
-      {n:'杨梅坑',lat:22.54446,lng:114.57089,a:'深圳市大鹏新区',t:'景点',k:'杨梅坑村 骑行 鹿嘴'},
-      {n:'鹿嘴山庄',lat:22.53981,lng:114.60830,a:'深圳市大鹏新区',t:'景点',k:'鹿嘴 周星驰 美人鱼 悬崖'},
-      {n:'桔钓沙',lat:22.55715,lng:114.55454,a:'深圳市大鹏新区',t:'景点',k:'桔钓沙海滩 沙滩'},
-      {n:'金沙湾',lat:22.56782,lng:114.46102,a:'深圳市大鹏新区',t:'景点',k:'下沙 金沙湾海滩'},
-      {n:'官湖村',lat:22.60321,lng:114.42428,a:'深圳市大鹏新区',t:'景点',k:'官湖 官湖角'},
-      {n:'沙鱼涌',lat:22.61107,lng:114.41694,a:'深圳市大鹏新区',t:'景点',k:'沙鱼涌村 沙鱼涌码头'},
-      {n:'南澳',lat:22.53441,lng:114.49090,a:'深圳市大鹏新区',t:'地点',k:'南澳街道 南澳墟镇 海鲜'},
-      {n:'水头沙',lat:22.54991,lng:114.47953,a:'深圳市大鹏新区',t:'地点',k:'水头 水头海鲜街'},
-      {n:'七娘山',lat:22.52205,lng:114.54827,a:'深圳市大鹏新区',t:'景点',k:'七娘山主峰 登山'},
-      {n:'坝光',lat:22.64832,lng:114.50076,a:'深圳市大鹏新区',t:'景点',k:'坝光社区 银叶树'},
-      {n:'玫瑰海岸',lat:22.60873,lng:114.37676,a:'深圳市大鹏新区',t:'景点',k:'玫瑰海岸沙滩 婚纱'},
-      {n:'大鹏半岛国家地质公园',lat:22.52897,lng:114.53119,a:'深圳市大鹏新区',t:'文化',k:'地质公园 国家地质公园'},
-      {n:'排牙山',lat:22.62473,lng:114.54155,a:'深圳市大鹏新区',t:'景点',k:'排牙山 爬山'},
-      {n:'大梅沙',lat:22.59155,lng:114.30749,a:'深圳市盐田区',t:'景点',k:'大梅沙海滨公园 沙滩 盐田'},
-      {n:'小梅沙',lat:22.60042,lng:114.32732,a:'深圳市盐田区',t:'景点',k:'小梅沙沙滩 盐田'},
-      {n:'东部华侨城',lat:22.61152,lng:114.30307,a:'深圳市盐田区',t:'景点',k:'华侨城 茶溪谷 大侠谷'},
-      {n:'梧桐山',lat:22.57943,lng:114.21954,a:'深圳市盐田区',t:'景点',k:'梧桐山主峰 罗湖 盐田'},
-      {n:'仙湖植物园',lat:22.57801,lng:114.18071,a:'深圳市罗湖区',t:'景点',k:'仙湖 弘法寺 罗湖'},
-      {n:'梅沙尖',lat:22.61523,lng:114.27446,a:'深圳市盐田区',t:'景点',k:'梅沙尖 盐田'},
-      {n:'东西冲',lat:22.47848,lng:114.55738,a:'深圳市大鹏新区',t:'景点',k:'东西冲 东西涌 海岸线 穿越 东冲 西冲'},
-      {n:'深圳北站',lat:22.61069,lng:114.03075,a:'深圳市龙华区',t:'交通',k:'北站 高铁 龙华 民治'},
-      {n:'五和',lat:22.62607,lng:114.06066,a:'深圳市龙岗区坂田街道',t:'交通',k:'五和地铁站 五和社区 坂田 龙岗'},
-      {n:'坂田',lat:22.62761,lng:114.07176,a:'深圳市龙岗区坂田街道',t:'地点',k:'坂田街道 华为基地'},
-      {n:'福田口岸',lat:22.51557,lng:114.06929,a:'深圳市福田区',t:'交通',k:'福田口岸 皇岗 过关 香港'},
-      {n:'罗湖口岸',lat:22.52839,lng:114.11841,a:'深圳市罗湖区',t:'文化',k:'罗湖口岸 罗湖 过关'},
-      {n:'深圳站',lat:22.53180,lng:114.11722,a:'深圳市罗湖区',t:'交通',k:'深圳火车站 罗湖 罗湖站'},
-      {n:'宝安国际机场',lat:22.63747,lng:113.80818,a:'深圳市宝安区',t:'交通',k:'宝安机场 深圳机场 福永 T3'},
-      {n:'深圳湾公园',lat:22.52190,lng:113.99379,a:'深圳市南山区',t:'景点',k:'深圳湾 红树林 骑行 南山'},
-      {n:'莲花山公园',lat:22.55390,lng:114.05835,a:'深圳市福田区',t:'景点',k:'莲花山 福田 风筝广场'},
-      {n:'世界之窗',lat:22.53455,lng:113.97353,a:'深圳市南山区',t:'景点',k:'世界之窗 南山 华侨城'},
-      {n:'华强北',lat:22.54658,lng:114.08927,a:'深圳市福田区',t:'地点',k:'华强北 电子市场 福田'},
-      {n:'东门老街',lat:22.54658,lng:114.11361,a:'深圳市罗湖区',t:'文化',k:'东门 东门步行街 老街 罗湖'},
-      {n:'蛇口',lat:22.47653,lng:113.91200,a:'深圳市南山区',t:'地点',k:'蛇口 南山 太子湾'},
-      {n:'海上世界',lat:22.48520,lng:113.91383,a:'深圳市南山区',t:'地点',k:'海上世界 蛇口 南山'},
-      {n:'深圳湾口岸',lat:22.50316,lng:113.94981,a:'深圳市南山区',t:'交通',k:'深圳湾口岸 过关 香港'},
-      {n:'深圳会展中心',lat:22.52955,lng:114.07063,a:'深圳市福田区',t:'文化',k:'会展中心 福田 会展'},
-      {n:'欢乐海岸',lat:22.52303,lng:113.98795,a:'深圳市南山区',t:'景点',k:'欢乐海岸 南山 华侨城'},
-      {n:'南头古城',lat:22.53760,lng:113.92432,a:'深圳市南山区',t:'文化',k:'南头古城 新安古城 南山'},
-      {n:'大芬油画村',lat:22.60777,lng:114.13682,a:'深圳市龙岗区',t:'景点',k:'大芬 油画村 龙岗 布吉'},
-      {n:'甘坑客家小镇',lat:22.65630,lng:114.10472,a:'深圳市龙岗区',t:'景点',k:'甘坑 客家小镇 龙岗 吉华'},
-      {n:'市民中心',lat:22.54365,lng:114.05963,a:'深圳市福田区',t:'文化',k:'市民中心 福田 书城'},
-      {n:'深圳图书馆',lat:22.54588,lng:114.05716,a:'深圳市福田区',t:'文化',k:'深圳图书馆 福田 市民中心'},
-      {n:'深圳野生动物园',lat:22.59685,lng:113.97320,a:'深圳市南山区',t:'景点',k:'野生动物园 西丽 南山'},
-      {n:'葵涌',lat:22.63530,lng:114.42555,a:'深圳市大鹏新区',t:'地点',k:'葵涌'},
+      {n:'较场尾',lat:22.589410,lng:114.510800,a:'深圳市大鹏新区',t:'景点',k:'教场尾 较场尾海滩 民宿 沙滩'},
+      {n:'大鹏所城',lat:22.595130,lng:114.512300,a:'深圳市大鹏新区',t:'文化',k:'大鹏古城 所城 大鹏守御千户所'},
+      {n:'西涌',lat:22.473420,lng:114.540640,a:'深圳市大鹏新区',t:'景点',k:'西冲 西涌沙滩 露营 帐篷'},
+      {n:'东涌',lat:22.488690,lng:114.584780,a:'深圳市大鹏新区',t:'景点',k:'东冲 东涌沙滩 东西冲 东西涌 穿越'},
+      {n:'深圳市天文台',lat:22.479670,lng:114.560240,a:'深圳市大鹏新区',t:'文化',k:'天文台 西涌天文台 观星'},
+      {n:'杨梅坑',lat:22.544460,lng:114.570890,a:'深圳市大鹏新区',t:'景点',k:'杨梅坑村 骑行 美人鱼 碧道'},
+      {n:'鹿嘴山庄',lat:22.539810,lng:114.607760,a:'深圳市大鹏新区',t:'景点',k:'鹿嘴 悬崖 美人鱼拍摄地'},
+      {n:'桔钓沙',lat:22.557160,lng:114.555150,a:'深圳市大鹏新区',t:'景点',k:'桔钓沙海滩 沙滩'},
+      {n:'金沙湾',lat:22.567840,lng:114.454200,a:'深圳市大鹏新区',t:'景点',k:'下沙 金沙湾海滩'},
+      {n:'玫瑰海岸',lat:22.608720,lng:114.378180,a:'深圳市大鹏新区',t:'景点',k:'玫瑰海岸沙滩 婚纱'},
+      {n:'官湖村',lat:22.602510,lng:114.422740,a:'深圳市大鹏新区',t:'景点',k:'官湖 官湖角'},
+      {n:'沙鱼涌',lat:22.611070,lng:114.416940,a:'深圳市大鹏新区',t:'景点',k:'沙鱼涌村 沙鱼涌码头'},
+      {n:'葵涌',lat:22.635300,lng:114.425550,a:'深圳市大鹏新区',t:'地点',k:'葵涌街道'},
+      {n:'坝光',lat:22.646110,lng:114.517930,a:'深圳市大鹏新区',t:'景点',k:'坝光社区 银叶树 湿地园'},
+      {n:'大鹏半岛国家地质公园',lat:22.529030,lng:114.531070,a:'深圳市大鹏新区',t:'景点',k:'地质公园 国家地质公园 博物馆 七娘山地质公园'},
+      {n:'七娘山',lat:22.522110,lng:114.548370,a:'深圳市大鹏新区',t:'景点',k:'七娘山主峰 登山'},
+      {n:'排牙山',lat:22.624730,lng:114.541550,a:'深圳市大鹏新区',t:'景点',k:'排牙山 爬山'},
+      {n:'南澳',lat:22.534410,lng:114.490890,a:'深圳市大鹏新区',t:'地点',k:'南澳街道 南澳墟镇 海鲜'},
+      {n:'水头海鲜街',lat:22.565700,lng:114.495760,a:'深圳市大鹏新区',t:'景点',k:'水头 海鲜街 海鲜大排档 大鹏'},
+      {n:'土洋村',lat:22.608120,lng:114.407500,a:'深圳市大鹏新区',t:'文化',k:'土洋 东江纵队'},
+      {n:'溪涌',lat:22.609070,lng:114.360890,a:'深圳市大鹏新区',t:'地点',k:'溪涌度假村'},
+      {n:'大梅沙',lat:22.591580,lng:114.308830,a:'深圳市盐田区',t:'景点',k:'大梅沙海滨公园 沙滩'},
+      {n:'小梅沙',lat:22.600410,lng:114.328690,a:'深圳市盐田区',t:'景点',k:'小梅沙沙滩 海洋世界'},
+      {n:'梧桐山',lat:22.579430,lng:114.219540,a:'深圳市盐田区',t:'景点',k:'梧桐山主峰 鹏城第一峰'},
+      {n:'梅沙尖',lat:22.615230,lng:114.274460,a:'深圳市盐田区',t:'景点',k:'梅沙尖'},
+      {n:'中英街',lat:22.545020,lng:114.231820,a:'深圳市盐田区',t:'文化',k:'中英街 沙头角'},
+      {n:'沙头角',lat:22.542680,lng:114.226440,a:'深圳市盐田区',t:'地点',k:'沙头角街道'},
+      {n:'盐田港',lat:22.577300,lng:114.263320,a:'深圳市盐田区',t:'地点',k:'盐田港区 盐田'},
+      {n:'背仔角',lat:22.591440,lng:114.340670,a:'深圳市盐田区',t:'景点',k:'背仔角灯塔'},
+      {n:'市民中心',lat:22.541710,lng:114.060970,a:'深圳市福田区',t:'文化',k:'深圳市民中心 福田'},
+      {n:'莲花山公园',lat:22.553950,lng:114.058360,a:'深圳市福田区',t:'景点',k:'莲花山 风筝广场'},
+      {n:'深圳图书馆',lat:22.545870,lng:114.057180,a:'深圳市福田区',t:'文化',k:'深圳图书馆 中心书城'},
+      {n:'深圳音乐厅',lat:22.547410,lng:114.057150,a:'深圳市福田区',t:'文化',k:'音乐厅'},
+      {n:'深圳会展中心',lat:22.530800,lng:114.059860,a:'深圳市福田区',t:'文化',k:'会展中心'},
+      {n:'购物公园',lat:22.534650,lng:114.054760,a:'深圳市福田区',t:'地点',k:'购物公园地铁站 COCO Park'},
+      {n:'华强北',lat:22.546580,lng:114.089270,a:'深圳市福田区',t:'地点',k:'华强北 电子市场'},
+      {n:'深业上城',lat:22.556180,lng:114.069320,a:'深圳市福田区',t:'景点',k:'深业上城'},
+      {n:'笔架山公园',lat:22.562530,lng:114.082420,a:'深圳市福田区',t:'景点',k:'笔架山'},
+      {n:'园博园',lat:22.537540,lng:114.004970,a:'深圳市福田区',t:'景点',k:'园林花卉博览园 国际园林花卉博览园'},
+      {n:'香蜜公园',lat:22.547020,lng:114.021920,a:'深圳市福田区',t:'景点',k:'香蜜湖'},
+      {n:'福田口岸',lat:22.515230,lng:114.067850,a:'深圳市福田区',t:'交通',k:'福田口岸 过关'},
+      {n:'皇岗口岸',lat:22.521540,lng:114.074130,a:'深圳市福田区',t:'交通',k:'皇岗口岸 过关'},
+      {n:'车公庙',lat:22.536040,lng:114.027710,a:'深圳市福田区',t:'交通',k:'车公庙地铁站'},
+      {n:'平安金融中心',lat:22.533910,lng:114.055460,a:'深圳市福田区',t:'景点',k:'平安大厦 云际观光层 Free Sky'},
+      {n:'荔枝公园',lat:22.545030,lng:114.101610,a:'深圳市福田区',t:'景点',k:'荔枝公园'},
+      {n:'深圳博物馆',lat:22.543580,lng:114.061740,a:'深圳市福田区',t:'文化',k:'深圳博物馆'},
+      {n:'红树林海滨生态公园',lat:22.522993,lng:114.000740,a:'深圳市福田区',t:'景点',k:'红树林 深圳湾 观鸟 海滨生态公园 福田'},
+      {n:'东门老街',lat:22.544610,lng:114.115970,a:'深圳市罗湖区',t:'文化',k:'东门 东门步行街 老街'},
+      {n:'罗湖万象城',lat:22.539600,lng:114.110530,a:'深圳市罗湖区',t:'景点',k:'万象城 MixC 华润万象城'},
+      {n:'国贸',lat:22.539730,lng:114.119010,a:'深圳市罗湖区',t:'地点',k:'国贸大厦'},
+      {n:'地王大厦',lat:22.542660,lng:114.110640,a:'深圳市罗湖区',t:'景点',k:'地王 信兴广场'},
+      {n:'京基100',lat:22.543010,lng:114.106700,a:'深圳市罗湖区',t:'景点',k:'京基一百 KK100'},
+      {n:'罗湖口岸',lat:22.528390,lng:114.118410,a:'深圳市罗湖区',t:'交通',k:'罗湖口岸 过关'},
+      {n:'深圳站',lat:22.531590,lng:114.117200,a:'深圳市罗湖区',t:'交通',k:'深圳火车站 罗湖站'},
+      {n:'仙湖植物园',lat:22.577920,lng:114.179770,a:'深圳市罗湖区',t:'景点',k:'仙湖 弘法寺'},
+      {n:'弘法寺',lat:22.577450,lng:114.182330,a:'深圳市罗湖区',t:'文化',k:'弘法寺'},
+      {n:'水贝',lat:22.574210,lng:114.124770,a:'深圳市罗湖区',t:'地点',k:'水贝珠宝'},
+      {n:'金光华广场',lat:22.539450,lng:114.120290,a:'深圳市罗湖区',t:'景点',k:'金光华'},
+      {n:'洪湖公园',lat:22.564980,lng:114.119840,a:'深圳市罗湖区',t:'景点',k:'洪湖'},
+      {n:'莲塘口岸',lat:22.553190,lng:114.155260,a:'深圳市罗湖区',t:'交通',k:'莲塘口岸 过关'},
+      {n:'世界之窗',lat:22.534580,lng:113.972920,a:'深圳市南山区',t:'景点',k:'世界之窗'},
+      {n:'欢乐谷',lat:22.541630,lng:113.980760,a:'深圳市南山区',t:'景点',k:'深圳欢乐谷'},
+      {n:'锦绣中华',lat:22.530430,lng:113.988540,a:'深圳市南山区',t:'景点',k:'锦绣中华民俗村'},
+      {n:'海岸城',lat:22.517220,lng:113.935720,a:'深圳市南山区',t:'景点',k:'南山海岸城'},
+      {n:'万象天地',lat:22.542520,lng:113.955050,a:'深圳市南山区',t:'景点',k:'深圳万象天地'},
+      {n:'深圳湾万象城',lat:22.516000,lng:113.943980,a:'深圳市南山区',t:'景点',k:'深圳湾万象城 后海'},
+      {n:'蛇口',lat:22.487970,lng:113.927340,a:'深圳市南山区',t:'地点',k:'蛇口街道'},
+      {n:'海上世界',lat:22.485080,lng:113.915020,a:'深圳市南山区',t:'景点',k:'海上世界 太子湾'},
+      {n:'南头古城',lat:22.543210,lng:113.920870,a:'深圳市南山区',t:'文化',k:'新安古城'},
+      {n:'深圳大学',lat:22.532860,lng:113.936510,a:'深圳市南山区',t:'文化',k:'深大 粤海校区 沧海校区'},
+      {n:'腾讯滨海大厦',lat:22.522920,lng:113.935950,a:'深圳市南山区',t:'地点',k:'腾讯滨海大厦 腾讯总部'},
+      {n:'深圳人才公园',lat:22.510660,lng:113.948440,a:'深圳市南山区',t:'景点',k:'人才公园'},
+      {n:'大沙河生态长廊',lat:22.556830,lng:113.973080,a:'深圳市南山区',t:'景点',k:'大沙河公园'},
+      {n:'前海',lat:22.523660,lng:113.897850,a:'深圳市南山区',t:'地点',k:'前海自贸区 前海石公园'},
+      {n:'欢乐海岸',lat:22.525570,lng:113.989330,a:'深圳市南山区',t:'景点',k:'深圳欢乐海岸'},
+      {n:'西丽',lat:22.573490,lng:113.953540,a:'深圳市南山区',t:'地点',k:'西丽湖'},
+      {n:'深圳野生动物园',lat:22.596910,lng:113.970740,a:'深圳市南山区',t:'景点',k:'野生动物园'},
+      {n:'中山公园',lat:22.547970,lng:113.918730,a:'深圳市南山区',t:'景点',k:'南山中山公园'},
+      {n:'荷兰花卉小镇',lat:22.543690,lng:113.911430,a:'深圳市南山区',t:'景点',k:'荷兰花卉小镇'},
+      {n:'深圳湾口岸',lat:22.503020,lng:113.950230,a:'深圳市南山区',t:'交通',k:'深圳湾口岸 过关'},
+      {n:'深圳湾体育中心',lat:22.518310,lng:113.949650,a:'深圳市南山区',t:'景点',k:'春茧'},
+      {n:'蛇口邮轮母港',lat:22.468850,lng:113.912900,a:'深圳市南山区',t:'交通',k:'蛇口邮轮中心'},
+      {n:'深圳湾公园',lat:22.497740,lng:113.958690,a:'深圳市南山区',t:'景点',k:'深圳湾 红树林 骑行'},
+      {n:'深圳湾公园地铁站',lat:22.521580,lng:113.992960,a:'深圳市南山区',t:'交通',k:'深圳湾公园 地铁站 9号线'},
+      {n:'深圳宝安国际机场',lat:22.637590,lng:113.805120,a:'深圳市宝安区',t:'交通',k:'宝安机场 深圳机场 T3'},
+      {n:'欢乐港湾',lat:22.543280,lng:113.883500,a:'深圳市宝安区',t:'景点',k:'欢乐港湾 湾区之光 摩天轮'},
+      {n:'壹方城',lat:22.552320,lng:113.887840,a:'深圳市宝安区',t:'景点',k:'宝安壹方城 前海壹方城'},
+      {n:'西乡',lat:22.576050,lng:113.861920,a:'深圳市宝安区',t:'地点',k:'西乡街道'},
+      {n:'凤凰山',lat:22.673020,lng:113.860050,a:'深圳市宝安区',t:'景点',k:'凤凰山森林公园 凤凰山庙 爬山'},
+      {n:'海上田园',lat:22.725740,lng:113.772380,a:'深圳市宝安区',t:'景点',k:'海上田园'},
+      {n:'宝安中心',lat:22.554590,lng:113.887200,a:'深圳市宝安区',t:'地点',k:'宝安中心区'},
+      {n:'五和',lat:22.626680,lng:114.060760,a:'深圳市龙岗区',t:'交通',k:'五和地铁站 五和社区'},
+      {n:'坂田',lat:22.627300,lng:114.070220,a:'深圳市龙岗区',t:'地点',k:'坂田街道'},
+      {n:'华为基地',lat:22.650430,lng:114.067150,a:'深圳市龙岗区',t:'地点',k:'华为 坂田华为基地'},
+      {n:'大运中心',lat:22.695540,lng:114.220530,a:'深圳市龙岗区',t:'景点',k:'大运体育中心'},
+      {n:'龙城广场',lat:22.716910,lng:114.254630,a:'深圳市龙岗区',t:'地点',k:'龙岗中心城'},
+      {n:'甘坑客家小镇',lat:22.656340,lng:114.103420,a:'深圳市龙岗区',t:'景点',k:'甘坑 客家小镇'},
+      {n:'布吉',lat:22.601740,lng:114.121610,a:'深圳市龙岗区',t:'地点',k:'布吉街道'},
+      {n:'大芬油画村',lat:22.609940,lng:114.136730,a:'深圳市龙岗区',t:'景点',k:'大芬 油画村'},
+      {n:'横岗',lat:22.648450,lng:114.209060,a:'深圳市龙岗区',t:'地点',k:'横岗街道'},
+      {n:'深圳东站',lat:22.602240,lng:114.119520,a:'深圳市龙岗区',t:'交通',k:'布吉火车站 深圳东站'},
+      {n:'深圳北站',lat:22.610690,lng:114.030750,a:'深圳市龙华区',t:'交通',k:'深圳北站 北站 高铁'},
+      {n:'民治',lat:22.617620,lng:114.041180,a:'深圳市龙华区',t:'地点',k:'民治街道'},
+      {n:'观澜湖',lat:22.721740,lng:114.076640,a:'深圳市龙华区',t:'景点',k:'观澜湖 观澜湖新城'},
+      {n:'观澜版画村',lat:22.741270,lng:114.091380,a:'深圳市龙华区',t:'景点',k:'观澜版画基地'},
+      {n:'龙华',lat:22.656240,lng:114.011830,a:'深圳市龙华区',t:'地点',k:'龙华街道'},
+      {n:'壹方天地',lat:22.646520,lng:114.031520,a:'深圳市龙华区',t:'景点',k:'龙华壹方天地'},
+      {n:'坪山',lat:22.705920,lng:114.327580,a:'深圳市坪山区',t:'地点',k:'坪山街道'},
+      {n:'燕子岭公园',lat:22.697960,lng:114.357340,a:'深圳市坪山区',t:'景点',k:'燕子岭'},
+      {n:'光明',lat:22.771820,lng:113.945200,a:'深圳市光明区',t:'地点',k:'光明街道'},
+      {n:'光明农场大观园',lat:22.760380,lng:113.961750,a:'深圳市光明区',t:'景点',k:'光明小镇 光明农场 大观园 欢乐田园'},
+      {n:'公明',lat:22.779020,lng:113.896770,a:'深圳市光明区',t:'地点',k:'公明街道'},
+      {n:'东山寺',lat:22.596320,lng:114.519620,a:'深圳市大鹏新区',t:'景点',k:''},
+      {n:'东涌沙滩',lat:22.488690,lng:114.584780,a:'深圳市大鹏新区',t:'景点',k:''},
+      {n:'中信城金沙湾水世界',lat:22.572220,lng:114.455720,a:'深圳市大鹏新区',t:'景点',k:''},
+      {n:'中信金沙湾冰雪世界',lat:22.575010,lng:114.457720,a:'深圳市大鹏新区',t:'景点',k:''},
+      {n:'深圳西涌国际暗夜社区',lat:22.478860,lng:114.543570,a:'深圳市大鹏新区',t:'景点',k:''},
+      {n:'溪涌工人度假村',lat:22.607200,lng:114.362720,a:'深圳市大鹏新区',t:'景点',k:''},
+      {n:'西涌沙滩',lat:22.473420,lng:114.540640,a:'深圳市大鹏新区',t:'景点',k:''},
+      {n:'较场尾海滩',lat:22.585880,lng:114.511510,a:'深圳市大鹏新区',t:'景点',k:''},
+      {n:'东江纵队纪念馆',lat:22.686770,lng:114.353040,a:'深圳市大鹏新区',t:'文化',k:''},
+      {n:'东涌码头',lat:22.486620,lng:114.582540,a:'深圳市大鹏新区',t:'交通',k:''},
+      {n:'深圳自然博物馆',lat:22.692763,lng:114.363487,a:'深圳市坪山区',t:'文化',k:'博物馆 自然 恐龙 坪山 燕子湖 文祥路'},
+      {n:'东部华侨城大侠谷',lat:22.611510,lng:114.300290,a:'深圳市盐田区',t:'景点',k:''},
+      {n:'小梅沙海洋世界',lat:22.603600,lng:114.331390,a:'深圳市盐田区',t:'景点',k:''},
+      {n:'深圳市航天农业科技示范园',lat:22.628700,lng:114.179080,a:'深圳市龙岗区',t:'景点',k:''},
+      {n:'背仔角灯塔',lat:22.591440,lng:114.340670,a:'深圳市盐田区',t:'景点',k:''},
+      {n:'中英街历史博物馆',lat:22.541610,lng:114.231230,a:'深圳市盐田区',t:'文化',k:''},
+      {n:'深圳古生物博物馆',lat:22.584510,lng:114.177530,a:'深圳市罗湖区',t:'文化',k:''},
+      {n:'金色海岸码头',lat:22.583970,lng:114.278990,a:'深圳市盐田区',t:'交通',k:''},
+      {n:'万象前海',lat:22.531280,lng:113.899370,a:'深圳市南山区',t:'景点',k:''},
+      {n:'万达广场',lat:22.748480,lng:113.932180,a:'深圳市光明区',t:'景点',k:''},
+      {n:'世纪汇',lat:22.541380,lng:114.083740,a:'深圳市福田区',t:'景点',k:''},
+      {n:'东角头灯塔',lat:22.477470,lng:113.932960,a:'深圳市南山区',t:'景点',k:''},
+      {n:'大亚湾核电站',lat:22.594138,lng:114.548879,a:'深圳市大鹏新区',t:'景点',k:'核电 科普 大鹏 岭澳 工业旅游'},
+      {n:'大雁顶',lat:22.517668,lng:114.588302,a:'深圳市大鹏新区',t:'景点',k:'七娘山 主峰 登山 徒步 大鹏 深圳第三高峰'},
+      {n:'海柴角',lat:22.508571,lng:114.625865,a:'深圳市大鹏新区',t:'景点',k:'海岸线 徒步 大鹏 东涌 深圳最东端'},
+      {n:'大鹿港',lat:22.462152,lng:114.494709,a:'深圳市大鹏新区',t:'景点',k:'海岸线 徒步 露营 大鹏 南澳'},
+      {n:'观音山公园',lat:22.584221,lng:114.454998,a:'深圳市大鹏新区',t:'景点',k:'公园 大鹏 登山 葵涌'},
+      {n:'王母围',lat:22.587732,lng:114.480937,a:'深圳市大鹏新区',t:'文化',k:'古村 大鹏 王母 围屋'},
+      {n:'鹏城村',lat:22.592791,lng:114.508304,a:'深圳市大鹏新区',t:'文化',k:'古村 大鹏所城 鹏城'},
+      {n:'岭澳',lat:22.592975,lng:114.474181,a:'深圳市大鹏新区',t:'文化',k:'古村 大鹏 岭澳'},
+      {n:'洞背村',lat:22.610879,lng:114.348911,a:'深圳市大鹏新区',t:'文化',k:'古村 溪涌 大鹏 民宿'},
+      {n:'上洞村',lat:22.610815,lng:114.375565,a:'深圳市大鹏新区',t:'文化',k:'古村 溪涌 大鹏'},
+      {n:'南澳月亮湾',lat:22.534760,lng:114.490790,a:'深圳市大鹏新区',t:'景点',k:'海湾 南澳 大鹏 日落'},
+      {n:'华侨城创意文化园',lat:22.538320,lng:113.993588,a:'深圳市南山区',t:'文化',k:'OCT LOFT 创意园 展览 南山 华侨城'},
+      {n:'华侨城',lat:22.533989,lng:113.982840,a:'深圳市南山区',t:'地点',k:'片区 南山 欢乐谷 世界之窗'},
+      {n:'大南山',lat:22.496897,lng:113.906100,a:'深圳市南山区',t:'景点',k:'登山 徒步 南山 蛇口'},
+      {n:'海上世界文化艺术中心',lat:22.480111,lng:113.916884,a:'深圳市南山区',t:'文化',k:'展览 设计 蛇口 南山'},
+      {n:'塘朗山',lat:22.574470,lng:113.982153,a:'深圳市南山区',t:'景点',k:'登山 徒步 南山 郊野公园 桃源'},
+      {n:'深圳当代艺术与城市规划馆',lat:22.545807,lng:114.061812,a:'深圳市福田区',t:'文化',k:'展览 市民中心 福田 两馆'},
+      {n:'深圳书城中心城',lat:22.546577,lng:114.059577,a:'深圳市福田区',t:'文化',k:'书城 购书 福田 中心书城'},
+      {n:'深圳中心公园',lat:22.545518,lng:114.075436,a:'深圳市福田区',t:'景点',k:'公园 福田 莲花山 华富'},
+      {n:'香蜜湖',lat:22.546657,lng:114.032600,a:'深圳市福田区',t:'地点',k:'片区 福田 香蜜'},
+      {n:'福田高铁站',lat:22.538163,lng:114.056647,a:'深圳市福田区',t:'交通',k:'高铁 福田 市民中心 会展中心'},
+      {n:'深圳美术馆新馆',lat:22.624897,lng:114.023817,a:'深圳市龙华区',t:'文化',k:'美术馆 展览 龙华 新馆 深圳北站'},
+      {n:'阳台山',lat:22.645543,lng:114.001646,a:'深圳市龙华区',t:'景点',k:'登山 徒步 龙华 石岩 羊台山'},
+      {n:'大浪时尚小镇',lat:22.695651,lng:113.984326,a:'深圳市龙华区',t:'地点',k:'时尚 服装 龙华 大浪'},
+      {n:'深圳国际会展中心',lat:22.698346,lng:113.774105,a:'深圳市宝安区',t:'景点',k:'会展 展馆 宝安 福海 宝安机场'},
+      {n:'凤凰古村',lat:22.597073,lng:113.879472,a:'深圳市宝安区',t:'文化',k:'古村 凤凰山 宝安 福永'},
+      {n:'深圳机场码头',lat:22.600588,lng:113.814648,a:'深圳市宝安区',t:'交通',k:'码头 轮渡 机场 宝安 福永'},
+      {n:'光明小镇欢乐田园',lat:22.788174,lng:113.960387,a:'深圳市光明区',t:'景点',k:'田园 花海 光明 亲子'},
+      {n:'光明城站',lat:22.733099,lng:113.953590,a:'深圳市光明区',t:'交通',k:'高铁 光明 火车站'},
+      {n:'坪山站',lat:22.705787,lng:114.327571,a:'深圳市坪山区',t:'交通',k:'高铁 坪山 火车站'},
     ];
     /* 搜索通道按承载环境动态组合：
        宿主预览 → 地图代理 + SDK；公开静态链接 → SDK（带自己的 Key）+ apis.map.qq.com 直连。
@@ -279,16 +397,158 @@
     /* 免密钥在线检索：OpenStreetMap 的 Photon 服务（无需 Key、允许跨域）。
        返回的是 WGS-84，必须换算成 GCJ-02 才能落在腾讯底图的正确位置。 */
     const OSM_API='https://photon.komoot.io/api/';
-    const OSM_BIAS={lat:22.55,lng:114.50};
+    const OSM_BIAS={lat:22.55,lng:114.08};
+    /* ── 深圳市范围判定 ─────────────────────────────────────────────────────
+       几何范围（矩形/多边形）都会误判：东莞虎门、松山湖落在深圳矩形框内，
+       东莞凤岗、惠州澳头紧贴深圳边界，靠坐标根本分不开。
+       可靠依据是 OpenStreetMap 的行政区字段，实测：
+         深圳 → city:"深圳市"   东莞 → city:"东莞市"   惠州 → city:"惠州市"
+         香港 → state:"香港 Hong Kong"（无 city）
+       注意：不能用名称黑名单——深圳大鹏新区本身就有一个叫「澳头」的地方。
+       判定分三层：① 明确市外城市名 → 排除；② 出现「深圳」 → 保留；
+       ③ 有城市/省份信息但都不是深圳 → 排除；④ 字段全缺时，才退回收紧矩形。 */
+    const SZ_CITY_RE=/深圳/;
+    const OUT_CITY_RE=/东莞市|惠州市|广州市|中山市|珠海市|香港|澳门|汕尾市|佛山市|江门市|肇庆市|清远市|河源市|韶关市|阳江市|茂名市|湛江市|汕头市|潮州市|揭阳市|梅州市|云浮市|惠阳|大亚湾经济技术开发区|仲恺/;
+    /* 兜底矩形：只在 city / county / state 字段全缺时才用，所以给得宽一些，
+       避免误伤深圳边缘（宝安沙井最西、大鹏半岛最南的离岸点）。 */
+    const SZ_BBOX={s:22.37,w:113.74,n:22.89,e:114.70};
+    function inShenzhen(lat,lng){return lat>=SZ_BBOX.s&&lat<=SZ_BBOX.n&&lng>=SZ_BBOX.w&&lng<=SZ_BBOX.e}
+    function placeText(p){return [p.city,p.state,p.district,p.county,p.locality].filter(Boolean).join(' ')}
+    function judgeShenzhen(p,lat,lng){
+      const t=placeText(p);
+      if(SZ_CITY_RE.test(t))return true;              /* ① 带「深圳」字样，直接认定 */
+      if(OUT_CITY_RE.test(t))return false;            /* ② 明确是东莞 / 惠州 / 香港等 */
+      const city=[p.city,p.county].filter(Boolean).join(' ');
+      if(city)return false;                           /* ③ 有市 / 县级但不是深圳 */
+      const st=[p.state].filter(Boolean).join(' ');
+      /* ④ 省份不是广东（且上面没命中深圳）→ 排除；只写「广东省」属于信息不全，继续往下判 */
+      if(st&&st.indexOf('广东')<0)return false;
+      return inShenzhen(lat,lng);                     /* ⑤ 信息不全，退回几何兜底 */
+    }
+    function distM(a,b){return Math.hypot((a.lat-b.lat)*111000,(a.lng-b.lng)*102000)}
+    function normText(s){return (s||'').toLowerCase().replace(/[\s·・\-—（）()【】\[\]，,。.、]/g,'')}
+    /* ── 在线结果的「精度」打分 ────────────────────────────────────────────
+       用户要的是「地点」，不是它旁边那条路、那条河或那块住宅地。所以**以 osm_value
+       为准**给分：地点实体（沙滩 / 山峰 / 博物馆 / 商圈 / 车站 / 村落…）拿高权，
+       线状与面状附属物（road / residential / river / landuse…）拿强负权，公交站这类
+       引导点拿小负权；osm_key 只在 osm_value 没收录时兜底。
+       实测效果：搜「西涌」先给西涌沙滩 / 西涌湾，沙井那条「西涌三路」沉到最后。 */
+    const OSM_VALUE_W={
+      /* 自然与景点 */
+      beach:36,bay:30,peak:32,cape:28,cliff:24,waterfall:28,spring:26,island:28,islet:24,
+      attraction:34,museum:28,viewpoint:26,theme_park:30,zoo:28,aquarium:26,gallery:24,artwork:16,information:14,
+      park:32,nature_reserve:36,protected_area:30,national_park:36,garden:26,wood:14,
+      /* 海边设施 */
+      marina:22,pier:18,lighthouse:26,harbour:24,
+      /* 运动与营地 */
+      golf_course:20,sports_centre:16,swimming_pool:14,stadium:16,camp_site:24,picnic_site:18,
+      /* 地名 */
+      city:30,town:30,suburb:28,quarter:28,neighbourhood:26,village:26,hamlet:24,locality:18,
+      /* 吃住购 */
+      hotel:18,resort:20,guest_house:20,hostel:18,chalet:18,
+      restaurant:18,cafe:18,fast_food:12,bar:12,pub:12,food_court:12,
+      supermarket:16,marketplace:20,mall:26,department_store:24,convenience:10,books:16,
+      /* 交通与公共设施 */
+      station:24,halt:18,subway_entrance:18,tram_stop:16,bus_station:18,ferry_terminal:24,aerodrome:26,
+      library:20,university:22,college:18,school:12,hospital:18,clinic:14,pharmacy:10,bank:10,
+      townhall:16,community_centre:14,place_of_worship:18,arts_centre:24,theatre:22,cinema:16,
+      monument:20,memorial:18,castle:26,ruins:18,archaeological_site:20,
+      /* 线状 / 面状附属物：一律压到底，避免抢走「地点」的位置 */
+      road:-60,street:-55,path:-60,footway:-60,cycleway:-60,service:-55,track:-55,bridge:-40,tunnel:-50,
+      motorway:-65,trunk:-65,primary:-60,secondary:-58,tertiary:-55,residential:-55,
+      living_street:-55,unclassified:-55,ditch:-55,
+      river:-55,stream:-60,canal:-55,reservoir:-40,water:-45,pond:-50,wetland:-35,
+      farmyard:-45,industrial:-35,commercial:-30,retail:-20,quarry:-55,landfill:-55,
+      cemetery:-45,allotments:-40,orchard:-40,vineyard:-40,
+      wall:-60,fence:-60,gate:-45,tower:-20,mast:-30,water_tower:-40,pipeline:-50,
+      bus_stop:-30,platform:-30,building:-25,house:-30,apartments:-25,yes:-25
+    };
+    const OSM_KIND_W={place:26,tourism:26,natural:24,leisure:22,boundary:22,historic:18,
+      aeroway:14,railway:12,office:12,amenity:12,shop:12,craft:10,public_transport:6,
+      building:-2,man_made:-4,highway:-4,route:-6,landuse:-6,power:-8,waterway:-10,barrier:-12};
+    function osmScore(p,title,keyword,dRef){
+      let s=0;
+      const q=normText(keyword),n=normText(title||'');
+      if(n&&q){if(n===q)s+=56;else if(n.indexOf(q)===0)s+=36;else if(n.indexOf(q)>=0)s+=26;else if(q.indexOf(n)>=0)s+=12;else s+=4}
+      const vw=OSM_VALUE_W[String(p.osm_value||'').toLowerCase()];
+      if(vw!==undefined)s+=vw;
+      else{const kw=OSM_KIND_W[p.osm_key];s+=(kw===undefined?6:kw)}
+      if(p.extent)s+=4;                         /* 有轮廓说明是个面状实体，比孤立节点可靠 */
+      s-=Math.min(14,dRef/2500);                /* 距离只做轻微调序，不超过 14 分 */
+      return s;
+    }
+    /* 上一次在线检索里，因为不在深圳市而被过滤掉的同名地点数量。 */
+    let lastOsmFiltered=0;
+    function searchFilterHint(){return lastOsmFiltered>0?'（另有 '+lastOsmFiltered+' 个同名地点在东莞 / 惠州 / 香港等市外，已按行政区过滤）':''}
+    /* GCJ-02 → WGS-84：迭代逼近，用于把参考点换算成 Photon 的偏置坐标。 */
+    function gcj02ToWgs84(lat,lng){
+      if(typeof outOfChina==='function'&&outOfChina(lat,lng))return {lat,lng};
+      let wLat=lat,wLng=lng;
+      for(let i=0;i<3;i++){const g=wgs84ToGcj02(wLat,wLng);wLat+=lat-g.lat;wLng+=lng-g.lng}
+      return {lat:wLat,lng:wLng};
+    }
+    function searchBuiltinCount(){return BUILTIN_PLACES.length}
     function osmCategory(p){const m={beach:'沙滩',attraction:'景点',museum:'博物馆',park:'公园',theme_park:'主题乐园',zoo:'动物园',garden:'园林',protected_area:'保护区',viewpoint:'观景点',peak:'山峰',hotel:'酒店',guest_house:'民宿',hostel:'青旅',camp_site:'营地',picnic_site:'野餐点',restaurant:'餐厅',cafe:'咖啡馆',fast_food:'快餐',bar:'酒吧',pub:'酒馆',supermarket:'超市',marketplace:'市场',mall:'商场',retail:'商圈',station:'车站',subway:'地铁站',train_station:'火车站',bus_stop:'公交站',aerodrome:'机场',harbour:'码头',marina:'游艇码头',pier:'栈桥',lighthouse:'灯塔',library:'图书馆',university:'大学',college:'学院',school:'学校',hospital:'医院',clinic:'诊所',pharmacy:'药房',bank:'银行',atm:'ATM',fuel:'加油站',parking:'停车场',sports_centre:'运动场馆',swimming_pool:'泳池',golf_course:'高尔夫',quarter:'片区',suburb:'片区',hamlet:'村落',village:'村落',town:'城镇',city:'城区',river:'河流',reservoir:'水库',bay:'海湾',island:'小岛',cliff:'崖壁',cape:'海角'};const v=(p.osm_value||'').toLowerCase();return m[v]||(p.osm_value?p.osm_value:'地点')}
-    function osmAddress(p){const parts=[];const city=p.city&&p.city!=='Shenzhen'?p.city:(p.state||'');if(city)parts.push(city);const d=p.district||p.county;if(d&&parts.indexOf(d)<0)parts.push(d);if(p.street)parts.push(p.street+(p.housenumber||''));return parts.join('')||'OpenStreetMap 地点'}
-    function searchViaOsm(keyword,refLoc,timeoutMs){return new Promise((resolve,reject)=>{const bias=(refLoc&&Number.isFinite(refLoc.lat))?refLoc:OSM_BIAS;const url=OSM_API+'?q='+encodeURIComponent(keyword)+'&limit=10&lat='+bias.lat.toFixed(4)+'&lon='+bias.lng.toFixed(4)+'&zoom=12';const ctrl=(typeof AbortController!=='undefined')?new AbortController():null;let finished=false;const timer=setTimeout(()=>{if(finished)return;finished=true;if(ctrl)ctrl.abort();reject(new Error('OSM 检索超时 '+timeoutMs/1000+'s'))},timeoutMs);fetch(url,ctrl?{signal:ctrl.signal}:undefined).then(r=>r.ok?r.json():Promise.reject(new Error('HTTP '+r.status))).then(d=>{if(finished)return;finished=true;clearTimeout(timer);const items=((d&&d.features)||[]).map(f=>{const c=(f.geometry&&f.geometry.coordinates)||[];const pr=f.properties||{};if(c.length<2)return null;const g=wgs84ToGcj02(c[1],c[0]);return {title:pr.name||keyword,address:osmAddress(pr),category:osmCategory(pr),location:{lat:g.lat,lng:g.lng},distance:Math.hypot((g.lat-bias.lat)*111000,(g.lng-bias.lng)*102000)}}).filter(Boolean).sort((a,b)=>a.distance-b.distance).slice(0,8);items.forEach(it=>{delete it.distance});resolve(items)}).catch(e=>{if(finished)return;finished=true;clearTimeout(timer);reject(new Error('OSM 检索失败 '+(e&&e.message||e)))})})}
+    function osmAddress(p){const cut=s=>String(s||'').split(' ')[0];const parts=[];const city=cut(p.city||p.state);if(city)parts.push(city);const d=cut(p.district||p.county);if(d&&parts.indexOf(d)<0)parts.push(d);const loc=cut(p.locality);if(loc&&parts.indexOf(loc)<0)parts.push(loc);if(p.street)parts.push(p.street+(p.housenumber||''));return parts.join(' · ')||'OpenStreetMap 地点'}
+    function searchViaOsm(keyword,refLoc,timeoutMs){return new Promise((resolve,reject)=>{
+      /* Photon 的 bbox 参数并不会真正过滤市外结果，所以本地按行政区字段判定。 */
+      const bias=(refLoc&&Number.isFinite(refLoc.lat))?gcj02ToWgs84(refLoc.lat,refLoc.lng):OSM_BIAS;
+      const url=OSM_API+'?q='+encodeURIComponent(keyword)+'&limit=20&lat='+bias.lat.toFixed(4)+'&lon='+bias.lng.toFixed(4)+'&zoom=11&lang=default';
+      const ctrl=(typeof AbortController!=='undefined')?new AbortController():null;
+      let finished=false;
+      const timer=setTimeout(()=>{if(finished)return;finished=true;if(ctrl)ctrl.abort();reject(new Error('OSM 检索超时 '+timeoutMs/1000+'s'))},timeoutMs);
+      const bail=e=>{if(finished)return;finished=true;clearTimeout(timer);reject(e instanceof Error?e:new Error(String(e)))};
+      fetch(url,ctrl?{signal:ctrl.signal}:undefined)
+        .then(r=>r.ok?r.json():Promise.reject(new Error('HTTP '+r.status)))
+        .then(d=>{
+          if(finished)return;
+          let items,outside=0;
+          try{
+            const ref=(refLoc&&Number.isFinite(refLoc.lat))?{lat:refLoc.lat,lng:refLoc.lng}:OSM_BIAS;
+            const seen=new Set();
+            items=((d&&d.features)||[]).map(f=>{
+              const c=(f.geometry&&f.geometry.coordinates)||[];
+              const pr=f.properties||{};
+              if(c.length<2)return null;
+              const g=wgs84ToGcj02(c[1],c[0]);
+              if(!judgeShenzhen(pr,g.lat,g.lng)){outside++;return null}
+              const title=pr.name||keyword;
+              const key=normText(title)+'@'+g.lat.toFixed(3)+g.lng.toFixed(3);
+              if(seen.has(key))return null;
+              seen.add(key);
+              const dRef=distM({lat:g.lat,lng:g.lng},ref);
+              return {title,address:osmAddress(pr),category:osmCategory(pr),location:{lat:g.lat,lng:g.lng},_s:osmScore(pr,title,keyword,dRef)};
+            }).filter(Boolean).sort((a,b)=>b._s-a._s).slice(0,8);
+            items.forEach(it=>{delete it._s});
+          }catch(e){return bail(e)}
+          finished=true;
+          clearTimeout(timer);
+          lastOsmFiltered=outside;
+          if(items.length)resolve(items);
+          /* 收到了响应、但结果全在深圳市外 —— 这属于「无匹配」，不该报成网络失败。 */
+          else if(((d&&d.features)||[]).length)resolve([]);
+          else reject(new Error('深圳市范围内没有「'+keyword+'」的匹配结果'));
+        })
+        .catch(bail);
+    })}
     /* 内置库检索：完全离线，用于在线通道全挂时兜底。 */
-    function searchBuiltin(keyword){const q=keyword.trim().toLowerCase();if(!q)return[];const out=[];for(const p of BUILTIN_PLACES){const hay=(p.n+' '+p.a+' '+p.k).toLowerCase();if(hay.indexOf(q)<0&&q.indexOf(p.n.toLowerCase())<0)continue;out.push({title:p.n,address:p.a+' · '+p.t,location:{lat:p.lat,lng:p.lng},builtin:true})}return out.slice(0,8)}
+    /* 内置库检索：离线可用，纯本地计算。命中越精确、离参考点越近，排得越前。 */
+    function searchBuiltin(keyword,refLoc){const q=normText(keyword);if(!q)return[];const ref=(refLoc&&Number.isFinite(refLoc.lat))?{lat:refLoc.lat,lng:refLoc.lng}:null;const out=[];for(const p of BUILTIN_PLACES){const n=normText(p.n),k=normText(p.k||''),a=normText(p.a||'');let s=0;if(n===q)s=120;else if(n.indexOf(q)===0)s=100;else if(n.indexOf(q)>=0)s=86;else if(k.indexOf(q)>=0)s=72;else if(a.indexOf(q)>=0)s=46;else continue;if(ref)s-=Math.min(36,distM({lat:p.lat,lng:p.lng},ref)/900);out.push({title:p.n,address:p.a+' · '+p.t,location:{lat:p.lat,lng:p.lng},builtin:true,_s:s})}out.sort((a,b)=>b._s-a._s);out.forEach(o=>{delete o._s});return out.slice(0,8)}
     function editReference(){const list=days[currentDay].points;const p=list[selectedIndex]||list[0];return (window.TMap&&p)?new TMap.LatLng(p.lat,p.lng):null}
-    function searchFailText(errs){const detail=errs.length?'（'+errs.join(' ／ ')+'）':'';return '在线检索没能返回结果'+detail+'。可以先将就用内置地点库：直接搜「西涌」「较场尾」「杨梅坑」等大鹏常用地点；网络恢复后重试，或在下方「地图搜索服务」填入自己的腾讯地图 Key。'}
-    async function searchPlaces(keyword,refLoc){const channels=searchChannels(refLoc);if(searchChannel!=='auto'){const i=channels.findIndex(c=>c.name===searchChannel);if(i>0)channels.unshift(channels.splice(i,1)[0])}const errs=[];let responded=false;for(const ch of channels){try{const items=await ch.run(keyword);if(items&&items.length){searchChannel=ch.name;return {items,errs,source:ch.name}}responded=true}catch(e){errs.push(ch.name+'：'+((e&&e.message)||e))}}const local=searchOffline(keyword);if(local.length)return {items:local,errs,source:channels.length?'offline':'none'};if(responded)return {items:[],errs,source:'empty'};return {items:[],errs,source:'fail'}}
-    async function searchEditPlace(){const keyword=$('#edit-place-search-input').value.trim();if(!keyword){setEditSearchStatus('请输入地点、餐厅、酒店或景点名称');return}setEditSearchStatus('正在搜索腾讯地图 POI…');const r=await searchPlaces(keyword,editReference());const note=r.source==='OSM 免密钥'?'以上结果来自 OpenStreetMap（免密钥），坐标已换算为腾讯地图坐标系':(r.source==='none'||r.source==='offline'?'以上匹配来自内置地点库与当前行程（在线检索不可用）':(r.source==='empty'?'在线检索没有匹配结果，以下为内置地点库中的相近地点':'')).replace(/^在线检索没有匹配结果，以下为内置地点库中的相近地点$/,r.items.length?'在线检索没有匹配结果，以下为内置地点库中的相近地点':'');if(r.source==='empty'&&!r.items.length){setEditSearchStatus('没有找到匹配地点：换个说法试试（如「西涌」「海滩」「民宿」）');return}if(r.items.length){renderEditSearchResults(r.items,note);return}setEditSearchStatus(searchFailText(r.errs))}
+    function searchFailText(errs){const detail=errs.length?'（'+errs.join(' ／ ')+'）':'';return '在线检索没能返回结果'+detail+'。检索已按行政区限定在深圳市内，可直接搜内置库里的常用地点（共 '+searchBuiltinCount()+' 个，如「西涌」「较场尾」「华强北」「万象城」）；网络恢复后重试，或在下方「地图搜索服务」填入自己的腾讯地图 Key。'}
+    function resultNote(r){if(r.source==='OSM 免密钥')return '在线结果来自 OpenStreetMap，已按行政区字段确认在深圳市内（东莞/惠州同名地点自动过滤）；带「内置精确点」的为逐条核对过坐标的常用地点';if(r.source==='none'||r.source==='offline')return '在线检索不可用，以下来自内置地点库（'+searchBuiltinCount()+' 个深圳 / 大鹏常用地点）与当前行程';if(r.source==='empty')return '在线检索没有匹配结果';return ''}
+    /* 内置库（经人工核对）永远排在线结果前面：深圳常用地点精度更可靠。
+       在线结果保持 searchViaOsm 已排好的「精度序」（地点实体在前），不再按距离重排——
+       否则「西涌三路」这类路名会盖过「西涌沙滩」。 */
+    function mergeResults(locals,online){
+      const seen=new Set(),out=[];
+      const push=it=>{const t=it&&it.title;if(!t)return;const k=normText(t);if(seen.has(k))return;seen.add(k);out.push(it)};
+      locals.slice(0,5).forEach(push);
+      online.forEach(push);
+      return out.slice(0,12);
+    }
+    async function searchPlaces(keyword,refLoc){const locals=searchBuiltin(keyword,refLoc);const channels=searchChannels(refLoc);if(searchChannel!=='auto'){const i=channels.findIndex(c=>c.name===searchChannel);if(i>0)channels.unshift(channels.splice(i,1)[0])}const errs=[];let responded=false;for(const ch of channels){try{const items=await ch.run(keyword);if(items&&items.length){searchChannel=ch.name;return {items:mergeResults(locals,items,refLoc),errs,source:ch.name}}responded=true}catch(e){errs.push(ch.name+'：'+((e&&e.message)||e))}}const local=searchOffline(keyword,refLoc);if(local.length)return {items:local,errs,source:channels.length?'offline':'none'};if(responded)return {items:[],errs,source:'empty'};return {items:[],errs,source:'fail'}}
+    async function searchEditPlace(){const keyword=$('#edit-place-search-input').value.trim();if(!keyword){setEditSearchStatus('请输入地点、餐厅、酒店或景点名称');return}setEditSearchStatus('正在搜索（深圳市范围内）…');const r=await searchPlaces(keyword,editReference());const note=resultNote(r);if(r.source==='empty'&&!r.items.length){setEditSearchStatus('深圳市范围内没有匹配地点'+searchFilterHint()+'：换个说法试试（如「西涌」「海滩」「民宿」）');return}if(r.items.length){renderEditSearchResults(r.items,note);return}setEditSearchStatus(searchFailText(r.errs))}
     let searchChannel='auto';
     function searchViaService(keyword,refLoc,timeoutMs){return new Promise((resolve,reject)=>{if(!window.TMap||!TMap.service||!TMap.service.Search)return reject(new Error('service 库未加载'));try{if(!searchService)searchService=new TMap.service.Search({pageSize:8})}catch(e){return reject(new Error('无法创建搜索实例：'+((e&&e.message)||e)))}let finished=false;const timer=setTimeout(()=>{if(finished)return;finished=true;reject(new Error('service 库请求超时 '+timeoutMs/1000+'s'))},timeoutMs);searchService.searchRegion({keyword,cityName:'深圳市',autoExtend:true,referenceLocation:refLoc}).then(res=>{if(finished)return;finished=true;clearTimeout(timer);if(res&&res.status===0)resolve(res.data||[]);else reject(new Error('service 库返回 status='+(res&&res.status)+' '+((res&&res.message)||'')))},e=>{if(finished)return;finished=true;clearTimeout(timer);reject(new Error('service 库报错 '+(e&&(e.message||e.name||JSON.stringify(e))||'未知')))})})}
     function proxyHost(){const h=window._TMapSecurityConfig&&window._TMapSecurityConfig.serviceHost;return h&&!/__WB_/.test(h)?h.replace(/\/+$/,''):null}
@@ -300,8 +560,8 @@
     function searchViaFetch(keyword,host,timeoutMs){return new Promise(resolve=>{const ctrl=typeof AbortController!=='undefined'?new AbortController():null;let finished=false;const timer=setTimeout(()=>{if(finished)return;finished=true;if(ctrl)ctrl.abort();resolve({ok:false,error:new Error('代理 fetch 超时 '+timeoutMs/1000+'s')})},timeoutMs);fetch(host+'/service/place/v1/search?keyword='+encodeURIComponent(keyword)+'&boundary='+encodeURIComponent('region(深圳市,1)')+'&page_size=8&output=json',ctrl?{signal:ctrl.signal}:undefined).then(r=>r.ok?r.json():Promise.reject(new Error('HTTP '+r.status))).then(d=>{if(finished)return;finished=true;clearTimeout(timer);if(d&&d.status===0)resolve({ok:true,items:d.data||[]});else resolve({ok:false,error:new Error('地图服务返回 status='+(d&&d.status)+' '+((d&&d.message)||''))})}).catch(e=>{if(finished)return;finished=true;clearTimeout(timer);resolve({ok:false,error:new Error((e&&e.name==='AbortError')?'代理 fetch 超时':'代理 fetch 失败 '+((e&&e.message)||e))})})})}
     function refreshProxyHost(){return fetch(location.href,{cache:'no-store'}).then(r=>r.text()).then(text=>{const m=text.match(/['"](https?:\/\/[^'"]*\/_TMapService\/[^'"]+)['"]/);if(!m||/__WB_/.test(m[1]))return false;window._TMapSecurityConfig=window._TMapSecurityConfig||{};window._TMapSecurityConfig.serviceHost=m[1].replace(/\/+$/,'');return true}).catch(()=>false)}
     function searchViaProxy(keyword,timeoutMs){const attempt=host=>searchViaJsonp(keyword,host,timeoutMs).catch(e1=>searchViaFetch(keyword,host,timeoutMs).then(r=>{if(r.ok)return r.items;throw new Error(((e1&&e1.message)||'JSONP 失败')+' ／ '+(r.error&&r.error.message))}));const host=proxyHost();if(!host)return Promise.reject(new Error('未接入地图服务代理（以本地文件直接打开时不可用），请在 WorkBuddy 预览中打开'));return attempt(host).catch(err=>refreshProxyHost().then(fresh=>{const next=proxyHost();if(!fresh||!next||next===host)throw err;return attempt(next)}))}
-    function searchOffline(keyword){const q=keyword.toLowerCase(),seen=new Set(),out=searchBuiltin(keyword);out.forEach(p=>seen.add(p.title));Object.values(days).flatMap(day=>day.points).forEach(p=>{const key=[p.name,p.meta,p.desc,p.type].join(' ').toLowerCase();if(!key.includes(q)||seen.has(p.name))return;seen.add(p.name);out.push({title:p.name,address:p.meta||p.desc||'当前行程地点',location:{lat:p.lat,lng:p.lng},offline:true})});return out.slice(0,8)}
-    async function searchPlace(){const keyword=$('#map-search-input').value.trim();if(!keyword){setSearchStatus('请输入地点、餐厅、酒店或景点名称');return}setSearchStatus('正在搜索腾讯地图 POI…');const r=await searchPlaces(keyword,editReference());if(r.source==='empty'){setSearchStatus('没有找到匹配地点：换个说法试试（如「西涌」「海滩」），或直接在地图上点选位置');return}if(r.items.length){renderSearchResults(r.items);if(r.source==='OSM 免密钥')setStatus('结果来自 OpenStreetMap（免密钥），坐标已换算为腾讯地图坐标系');else if(r.source==='none')setStatus('当前无法联网检索，已显示内置地点库与行程中的匹配地点');else if(r.source==='offline')setStatus('在线检索暂时不可用，已显示内置地点库与行程中的匹配地点');return}setSearchStatus(searchFailText(r.errs))}
+    function searchOffline(keyword,refLoc){const q=normText(keyword),seen=new Set(),out=searchBuiltin(keyword,refLoc);out.forEach(p=>seen.add(normText(p.title)));Object.values(days).flatMap(day=>day.points).forEach(p=>{const key=normText([p.name,p.meta,p.desc,p.type].join(' '));if(key.indexOf(q)<0||seen.has(normText(p.name)))return;seen.add(normText(p.name));out.push({title:p.name,address:p.meta||p.desc||'当前行程地点',location:{lat:p.lat,lng:p.lng},offline:true})});return out.slice(0,8)}
+    async function searchPlace(){const keyword=$('#map-search-input').value.trim();if(!keyword){setSearchStatus('请输入地点、餐厅、酒店或景点名称');return}setSearchStatus('正在搜索（深圳市范围内）…');const r=await searchPlaces(keyword,editReference());if(r.source==='empty'){setSearchStatus('深圳市范围内没有匹配地点'+searchFilterHint()+'：换个说法试试（如「西涌」「海滩」），或直接在地图上点选位置');return}if(r.items.length){renderSearchResults(r.items);if(r.source==='OSM 免密钥')setStatus('已优先显示内置精确点，其余在线结果已按行政区确认在深圳市内');else if(r.source==='none'||r.source==='offline')setStatus('在线检索不可用，已显示内置地点库与行程中的匹配地点');return}setSearchStatus(searchFailText(r.errs))}
     function startPick(){picking=true;$('#location-mode').classList.add('show');setStatus('点击地图任意位置写入坐标');}
     function stopPick(){picking=false;$('#location-mode').classList.remove('show')}
     function applyPickedLocation(latLng){if(!picking)return;$('#edit-lat').value=latLng.lat.toFixed(6);$('#edit-lng').value=latLng.lng.toFixed(6);stopPick();setStatus('坐标已写入表单，请保存修改')}
@@ -312,9 +572,18 @@
     function wgs84ToGcj02(lat,lng){if(outOfChina(lat,lng))return {lat,lng};const a=6378245.0,ee=.00669342162296594323,rad=Math.PI/180;let dLat=transformLat(lng-105,lat-35),dLng=transformLng(lng-105,lat-35);const magic=1-ee*Math.sin(lat*rad)*Math.sin(lat*rad),sqrtMagic=Math.sqrt(magic);dLat=dLat*180/(a*(1-ee)/(magic*sqrtMagic)*Math.PI);dLng=dLng*180/(a/sqrtMagic*Math.cos(lat*rad)*Math.PI);return {lat:lat+dLat,lng:lng+dLng}}
     function useCurrentLocation(){if(!navigator.geolocation){setStatus('当前浏览器不支持定位');return}setStatus('正在读取当前位置…');navigator.geolocation.getCurrentPosition(pos=>{const gcj=wgs84ToGcj02(pos.coords.latitude,pos.coords.longitude);$('#edit-lat').value=gcj.lat.toFixed(6);$('#edit-lng').value=gcj.lng.toFixed(6);setStatus('已读取当前位置并转换为腾讯地图 GCJ-02')},()=>setStatus('无法读取当前位置，请检查浏览器定位权限'),{enableHighAccuracy:true,timeout:10000})}
     function placeDefaultControls(){if(!map||!window.TMap||!TMap.constants)return;try{const zoom=map.getControl(TMap.constants.DEFAULT_CONTROL_ID.ZOOM);if(zoom&&zoom.setPosition)zoom.setPosition(TMap.constants.CONTROL_POSITION.BOTTOM_RIGHT);const scale=map.getControl(TMap.constants.DEFAULT_CONTROL_ID.SCALE);if(scale&&scale.setPosition)scale.setPosition(TMap.constants.CONTROL_POSITION.BOTTOM_LEFT)}catch(e){console.warn('调整地图控件位置失败',e)}}
+    /* 腾讯底图在无有效 Key 时会插入一条「当前产品鉴权失败」的白底提示条。
+       本页底图、标记、连线与检索都不依赖它，这里把它隐藏掉；只处理 #map 内、
+       且自身直接包含该文案的节点，避免误伤页面自己的界面。 */
+    function hideTmapAuthNotice(){
+      const box=$('#map');if(!box)return;
+      const sweep=()=>{box.querySelectorAll('div,span,p,section').forEach(el=>{if(el.dataset.tmapNotice)return;const own=Array.from(el.childNodes).filter(n=>n.nodeType===3).map(n=>n.nodeValue||'').join('');if(/鉴权失败|未授权|请检查\s*KEY|invalid\s*key/i.test(own)){el.style.setProperty('display','none','important');el.dataset.tmapNotice='1'}})};
+      sweep();
+      try{if(window.MutationObserver){if(window.__tmapNoticeObs)window.__tmapNoticeObs.disconnect();window.__tmapNoticeObs=new MutationObserver(sweep);window.__tmapNoticeObs.observe(box,{childList:true,subtree:true})}}catch(e){}
+    }
     function drawMap(points){if(!window.TMap){$('#map-fallback').style.display='flex';return}$('#map-fallback').style.display='none';if(!map){map=new TMap.Map('map',{center:new TMap.LatLng(points[0].lat,points[0].lng),zoom:12.4});map.on('click',e=>applyPickedLocation(e.latLng));placeDefaultControls();}
       /* 地图 SDK 加载失败或无网络时，点位与连线照常保留在行程卡片中，编辑不受影响。 */const geometries=points.map((p,i)=>({id:String(i),styleId:'pin',position:new TMap.LatLng(p.lat,p.lng),properties:{title:p.name}}));if(markerLayer){markerLayer.setGeometries(geometries)}else{markerLayer=new TMap.MultiMarker({map,styles:{pin:new TMap.MarkerStyle({width:34,height:34,anchor:{x:17,y:30},src:'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34"><path d="M17 1C8.2 1 2 7.5 2 15.2 2 25 17 33 17 33s14.9-8 14.9-17.8C31.9 7.5 25.7 1 17 1z" fill="#1d8c73" stroke="white" stroke-width="2"/><circle cx="17" cy="15" r="5" fill="white"/></svg>`)})},geometries});}const paths=points.map(p=>new TMap.LatLng(p.lat,p.lng));if(lineLayer){lineLayer.setGeometries([{id:'route',styleId:'route',paths}])}else{lineLayer=new TMap.MultiPolyline({map,styles:{route:new TMap.PolylineStyle({color:'#1d8c73',width:4,borderWidth:2,borderColor:'#ffffff',lineCap:'round',lineJoin:'round'})},geometries:[{id:'route',styleId:'route',paths}]});}const bounds=new TMap.LatLngBounds(new TMap.LatLng(Math.min(...points.map(p=>p.lat)),Math.min(...points.map(p=>p.lng))),new TMap.LatLng(Math.max(...points.map(p=>p.lat)),Math.max(...points.map(p=>p.lng))));map.fitBounds(bounds,{padding:80});}
-    loadSaved();loadGithubConfig();tmapSetupStatus();$('#tmap-key-save').addEventListener('click',()=>{const v=$('#tmap-key').value.trim();try{v?localStorage.setItem(TMAP_KEY,v):localStorage.removeItem(TMAP_KEY)}catch(e){}if(typeof commitFormSilently==='function')commitFormSilently();setGithubStatus(v?'地图 Key 已保存，正在应用…':'地图 Key 已清除，正在应用…');location.reload()});$('#tmap-key-clear').addEventListener('click',()=>{try{localStorage.removeItem(TMAP_KEY)}catch(e){}$('#tmap-key').value='';tmapSetupStatus();setStatus('已清除本机地图 Key');if(typeof commitFormSilently==='function')commitFormSilently();location.reload()});document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{selectedIndex=0;renderDay(+b.dataset.day)}));$('#map-search-btn').addEventListener('click',searchPlace);$('#edit-place-search-btn').addEventListener('click',searchEditPlace);$('#edit-place-search-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchEditPlace()}if(e.key==='Escape'){$('#edit-search-results').classList.remove('show')}});$('#map-search-input').addEventListener('click',()=>$('#edit-search-results').classList.remove('show'));$('#map-search-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchPlace()}if(e.key==='Escape')closeSearchResults()});document.addEventListener('click',e=>{if(!e.target.closest('.map-search'))closeSearchResults()});$('#save-point').addEventListener('click',savePoint);$('#add-point').addEventListener('click',addPoint);$('#reset-data').addEventListener('click',resetData);$('#pick-map').addEventListener('click',startPick);$('#cancel-pick').addEventListener('click',stopPick);$('#use-location').addEventListener('click',useCurrentLocation);$('#github-load').addEventListener('click',()=>githubRead());$('#github-save').addEventListener('click',()=>githubSave());$('#github-diag').addEventListener('click',()=>githubDiagnose());bindAutoSave();renderDay(1);window.onTMapReady=()=>{try{drawMap(days[currentDay].points)}catch(e){console.warn('地图初始化失败',e)}};if(!isDirty())githubRead(true);const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+    loadSaved();loadGithubConfig();tmapSetupStatus();hideTmapAuthNotice();$('#tmap-key-save').addEventListener('click',()=>{const v=$('#tmap-key').value.trim();try{v?localStorage.setItem(TMAP_KEY,v):localStorage.removeItem(TMAP_KEY)}catch(e){}if(typeof commitFormSilently==='function')commitFormSilently();setGithubStatus(v?'地图 Key 已保存，正在应用…':'地图 Key 已清除，正在应用…');location.reload()});$('#tmap-key-clear').addEventListener('click',()=>{try{localStorage.removeItem(TMAP_KEY)}catch(e){}$('#tmap-key').value='';tmapSetupStatus();setStatus('已清除本机地图 Key');if(typeof commitFormSilently==='function')commitFormSilently();location.reload()});document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{selectedIndex=0;renderDay(+b.dataset.day)}));$('#map-search-btn').addEventListener('click',searchPlace);$('#edit-place-search-btn').addEventListener('click',searchEditPlace);$('#edit-place-search-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchEditPlace()}if(e.key==='Escape'){$('#edit-search-results').classList.remove('show')}});$('#map-search-input').addEventListener('click',()=>$('#edit-search-results').classList.remove('show'));$('#map-search-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchPlace()}if(e.key==='Escape')closeSearchResults()});document.addEventListener('click',e=>{if(!e.target.closest('.map-search'))closeSearchResults()});$('#save-point').addEventListener('click',savePoint);$('#add-point').addEventListener('click',addPoint);$('#reset-data').addEventListener('click',resetData);$('#pick-map').addEventListener('click',startPick);$('#cancel-pick').addEventListener('click',stopPick);$('#use-location').addEventListener('click',useCurrentLocation);$('#github-load').addEventListener('click',()=>githubRead());$('#github-save').addEventListener('click',()=>githubSave());$('#github-diag').addEventListener('click',()=>githubDiagnose());bindAutoSave();renderDay(1);window.onTMapReady=()=>{try{drawMap(days[currentDay].points)}catch(e){console.warn('地图初始化失败',e)}};if(!isDirty())githubRead(true);const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
   </script>
 </body>
 </html>
