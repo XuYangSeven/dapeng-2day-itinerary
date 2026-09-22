@@ -1,0 +1,8 @@
+# WorkBuddy 本地数据：项目记忆与配置，不进入公开仓库
+.workbuddy/
+
+# 发布用临时目录（内容为 index.html 的副本，避免仓库重复）
+site/
+
+# 系统文件
+.DS_Store
