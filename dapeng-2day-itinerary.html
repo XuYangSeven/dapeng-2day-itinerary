@@ -117,6 +117,32 @@
     const COPY_KEY='dapeng-2day-copy-v1';
     /* 一次性迁移表：旧版残留的点位名 → 当前版本。仅在文案版本升级的那一次生效，之后不再覆盖你的改名。 */
     const LEGACY_POINT_FIX={'拾吉饮品小吃早餐':'拾吉饮品小吃早餐（还不确定去不去这家，这个作为保底）'};
+    /* 页面自带的旧示例行程（早期版本那份「西涌观星」攻略，5+6=11 个点位）。
+       它不是你填的内容，却会因为「本机存过就不拉云端」的规则长期盖住新行程——
+       表现就是标题/里程已经是新版、点位还是旧的。所以识别到就整份清掉，改用当前行程。
+       判定只认两种强特征，避免误伤你自己排的行程。 */
+    const LEGACY_SIGS=['深圳市区租车|南澳海鲜街|西涌星空酒店|西涌3号沙滩|深圳市天文台//深圳市天文台公共栈道|西涌社区早餐|杨梅坑|鹿嘴山庄海岸线|大鹏所城|较场尾海滨路'];
+    const LEGACY_ONLY=['南澳海鲜街','西涌星空酒店','西涌社区早餐','大鹏所城','深圳市区租车','鹿嘴山庄海岸线'];
+    function normName(v){return String(v==null?'':v).replace(/\s+/g,'').split(/[·・•]/)[0]}
+    function normDay(list){return (list||[]).map(p=>normName(p&&p.name)).join('|')}
+    function isLegacyTemplate(d){try{
+      if(!d||!d[1]||!d[2]||!Array.isArray(d[1].points)||!Array.isArray(d[2].points))return false;
+      if(LEGACY_SIGS.indexOf(normDay(d[1].points)+'//'+normDay(d[2].points))>=0)return true;
+      const names=d[1].points.concat(d[2].points).map(p=>normName(p&&p.name));
+      let hit=0;LEGACY_ONLY.forEach(k=>{if(names.indexOf(k)>=0)hit++});
+      return names.length===11&&hit>=4}catch(e){return false}}
+    /* 清除本机残留的旧示例行程（主键与快照一起清），使它不再遮挡当前行程。返回是否有清除动作。 */
+    function dropLegacyLocal(){let dropped=false;try{
+      const raw=localStorage.getItem(STORAGE_KEY);
+      if(raw){try{if(isLegacyTemplate(JSON.parse(raw))){localStorage.removeItem(STORAGE_KEY);dropped=true}}catch(e){}}
+      const list=snapshots();
+      const kept=list.filter(it=>{try{return !isLegacyTemplate(JSON.parse(it.d))}catch(e){return true}});
+      if(kept.length!==list.length){localStorage.setItem(SNAP_KEY,JSON.stringify(kept));dropped=true}
+      /* 旧模板不是你的改动，别让「未同步」脏标记跟着留下来弹误导性的提醒条。 */
+      if(dropped)localStorage.removeItem(DIRTY_KEY);
+    }catch(e){}
+    if(dropped)console.info('本机保存的是页面自带的旧示例行程（不是你的编辑），已清除并改用当前行程');
+    return dropped}
     let hadLocalSaved=false;
     const originalDays=JSON.parse(JSON.stringify(days));
     const $=s=>document.querySelector(s);
@@ -132,7 +158,7 @@
       if(raw){try{if(applySaved(JSON.parse(raw))){hadLocalSaved=true;return true}}catch(e){console.warn('本机行程解析失败',e)}}
       /* 主键丢了（换了来源/端口、被清理过）时，用最近一次自动快照兜底，避免整份行程直接消失。 */
       const list=snapshots();
-      for(const it of list){try{if(applySaved(JSON.parse(it.d))){hadLocalSaved=true;try{localStorage.setItem(STORAGE_KEY,JSON.stringify(days))}catch(e){}return true}}catch(e){}}
+      for(const it of list){try{const sd=JSON.parse(it.d);if(isLegacyTemplate(sd))continue;if(applySaved(sd)){hadLocalSaved=true;try{localStorage.setItem(STORAGE_KEY,JSON.stringify(days))}catch(e){}return true}}catch(e){}}
       return false}
     /* 把本机保存的旧文案换成当前版本：只改 title/subtitle/distance/mapTitle/mapCaption，
        外加迁移表里那几个旧点位名；你自己增删的点、坐标、时间、备注一律不碰。 */
@@ -675,7 +701,7 @@
     }
     function drawMap(points){if(!window.TMap){$('#map-fallback').style.display='flex';return}$('#map-fallback').style.display='none';if(!map){map=new TMap.Map('map',{center:new TMap.LatLng(points[0].lat,points[0].lng),zoom:12.4});map.on('click',e=>applyPickedLocation(e.latLng));placeDefaultControls();}
       /* 地图 SDK 加载失败或无网络时，点位与连线照常保留在行程卡片中，编辑不受影响。 */const geometries=points.map((p,i)=>({id:String(i),styleId:'pin',position:new TMap.LatLng(p.lat,p.lng),properties:{title:p.name}}));if(markerLayer){markerLayer.setGeometries(geometries)}else{markerLayer=new TMap.MultiMarker({map,styles:{pin:new TMap.MarkerStyle({width:34,height:34,anchor:{x:17,y:30},src:'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34"><path d="M17 1C8.2 1 2 7.5 2 15.2 2 25 17 33 17 33s14.9-8 14.9-17.8C31.9 7.5 25.7 1 17 1z" fill="#1d8c73" stroke="white" stroke-width="2"/><circle cx="17" cy="15" r="5" fill="white"/></svg>`)})},geometries});}const paths=points.map(p=>new TMap.LatLng(p.lat,p.lng));if(lineLayer){lineLayer.setGeometries([{id:'route',styleId:'route',paths}])}else{lineLayer=new TMap.MultiPolyline({map,styles:{route:new TMap.PolylineStyle({color:'#1d8c73',width:4,borderWidth:2,borderColor:'#ffffff',lineCap:'round',lineJoin:'round'})},geometries:[{id:'route',styleId:'route',paths}]});}const bounds=new TMap.LatLngBounds(new TMap.LatLng(Math.min(...points.map(p=>p.lat)),Math.min(...points.map(p=>p.lng))),new TMap.LatLng(Math.max(...points.map(p=>p.lat)),Math.max(...points.map(p=>p.lng))));map.fitBounds(bounds,{padding:80});}
-    loadSaved();migrateCopy();loadGithubConfig();tmapSetupStatus();hideTmapAuthNotice();previewNotice();paintStamp();showSyncNotice();$('#tmap-key-save').addEventListener('click',()=>{const v=$('#tmap-key').value.trim();try{v?localStorage.setItem(TMAP_KEY,v):localStorage.removeItem(TMAP_KEY)}catch(e){}if(typeof commitFormSilently==='function')commitFormSilently();setGithubStatus(v?'地图 Key 已保存，正在应用…':'地图 Key 已清除，正在应用…');location.reload()});$('#tmap-key-clear').addEventListener('click',()=>{try{localStorage.removeItem(TMAP_KEY)}catch(e){}$('#tmap-key').value='';tmapSetupStatus();setStatus('已清除本机地图 Key');if(typeof commitFormSilently==='function')commitFormSilently();location.reload()});document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{selectedIndex=0;renderDay(+b.dataset.day)}));$('#map-search-btn').addEventListener('click',searchPlace);$('#edit-place-search-btn').addEventListener('click',searchEditPlace);$('#edit-place-search-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchEditPlace()}if(e.key==='Escape'){$('#edit-search-results').classList.remove('show')}});$('#map-search-input').addEventListener('click',()=>$('#edit-search-results').classList.remove('show'));$('#map-search-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchPlace()}if(e.key==='Escape')closeSearchResults()});document.addEventListener('click',e=>{if(!e.target.closest('.map-search'))closeSearchResults()});$('#save-point').addEventListener('click',savePoint);$('#add-point').addEventListener('click',addPoint);$('#reset-data').addEventListener('click',resetData);$('#export-data').addEventListener('click',exportData);$('#import-data').addEventListener('click',()=>$('#import-file').click());$('#import-file').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(f)importData(f);e.target.value=''});$('#rollback-snapshot').addEventListener('click',rollbackSnapshot);$('#pick-map').addEventListener('click',startPick);$('#cancel-pick').addEventListener('click',stopPick);$('#use-location').addEventListener('click',useCurrentLocation);$('#github-load').addEventListener('click',()=>githubRead());$('#github-save').addEventListener('click',()=>githubSave());$('#github-diag').addEventListener('click',()=>githubDiagnose());bindAutoSave();renderDay(1);window.onTMapReady=()=>{try{drawMap(days[currentDay].points)}catch(e){console.warn('地图初始化失败',e)}};if(!isDirty()&&!hadLocalSaved)githubRead(true);else if(hadLocalSaved)setGithubStatus('已载入本机保存的行程（'+pointCount()+' 个点位）；填 Token 即可同步到仓库');const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+    dropLegacyLocal();loadSaved();migrateCopy();loadGithubConfig();tmapSetupStatus();hideTmapAuthNotice();previewNotice();paintStamp();showSyncNotice();$('#tmap-key-save').addEventListener('click',()=>{const v=$('#tmap-key').value.trim();try{v?localStorage.setItem(TMAP_KEY,v):localStorage.removeItem(TMAP_KEY)}catch(e){}if(typeof commitFormSilently==='function')commitFormSilently();setGithubStatus(v?'地图 Key 已保存，正在应用…':'地图 Key 已清除，正在应用…');location.reload()});$('#tmap-key-clear').addEventListener('click',()=>{try{localStorage.removeItem(TMAP_KEY)}catch(e){}$('#tmap-key').value='';tmapSetupStatus();setStatus('已清除本机地图 Key');if(typeof commitFormSilently==='function')commitFormSilently();location.reload()});document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{selectedIndex=0;renderDay(+b.dataset.day)}));$('#map-search-btn').addEventListener('click',searchPlace);$('#edit-place-search-btn').addEventListener('click',searchEditPlace);$('#edit-place-search-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchEditPlace()}if(e.key==='Escape'){$('#edit-search-results').classList.remove('show')}});$('#map-search-input').addEventListener('click',()=>$('#edit-search-results').classList.remove('show'));$('#map-search-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchPlace()}if(e.key==='Escape')closeSearchResults()});document.addEventListener('click',e=>{if(!e.target.closest('.map-search'))closeSearchResults()});$('#save-point').addEventListener('click',savePoint);$('#add-point').addEventListener('click',addPoint);$('#reset-data').addEventListener('click',resetData);$('#export-data').addEventListener('click',exportData);$('#import-data').addEventListener('click',()=>$('#import-file').click());$('#import-file').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(f)importData(f);e.target.value=''});$('#rollback-snapshot').addEventListener('click',rollbackSnapshot);$('#pick-map').addEventListener('click',startPick);$('#cancel-pick').addEventListener('click',stopPick);$('#use-location').addEventListener('click',useCurrentLocation);$('#github-load').addEventListener('click',()=>githubRead());$('#github-save').addEventListener('click',()=>githubSave());$('#github-diag').addEventListener('click',()=>githubDiagnose());bindAutoSave();renderDay(1);window.onTMapReady=()=>{try{drawMap(days[currentDay].points)}catch(e){console.warn('地图初始化失败',e)}};if(!isDirty()&&!hadLocalSaved)githubRead(true);else if(hadLocalSaved)setGithubStatus('已载入本机保存的行程（'+pointCount()+' 个点位）；填 Token 即可同步到仓库');const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
   </script>
 </body>
 </html>
