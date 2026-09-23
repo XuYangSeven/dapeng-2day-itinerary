@@ -55,11 +55,16 @@
     @media(max-width:560px){header{padding-top:25px}.topline{margin-bottom:38px}.date-note{font-size:10px;padding:7px 9px}.hero h1{font-size:62px}.lede{font-size:14px}.metrics{gap:7px}.metric{min-height:90px;padding:12px}.metric strong{font-size:22px}.metric span{font-size:10px}.tabs{overflow:auto;margin-inline:-8px;padding-inline:8px}.tab{min-width:88px;padding-inline:10px}.tab strong{font-size:27px}.workspace{gap:12px}.map-panel{height:430px;border-radius:20px}.map-legend{display:none}.timeline:before{left:69px}.poi-card{grid-template-columns:68px 1fr;gap:12px}.dot{left:63px}.card-title{align-items:flex-start}.card-title h3{font-size:15px}.tag{font-size:10px}.ribbon{margin:15px 0 28px}.note{margin-bottom:35px}.edit-form{grid-template-columns:1fr}.edit-form label.full{grid-column:auto}.coord-row{grid-template-columns:1fr}.edit-actions .btn{flex:1}.location-mode{left:10px;right:10px;bottom:10px}.edit-form input,.edit-form select,.edit-form textarea,.github-sync input{font-size:16px}.edit-panel{padding:14px}.github-sync-grid{grid-template-columns:1fr}.github-sync-actions .btn{flex:1}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.reveal.in{opacity:1;transform:none;transition:none}.poi-card{transition:none}}
     /* 易失来源提示条：预览面板地址每次都会变，存储按来源隔离，这里填的内容带不走。 */
-    #volatile-notice{position:sticky;top:0;z-index:60;display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:9px 16px;background:#fff6e6;border-bottom:1px solid #f0d9ae;color:#6b4a12;font-size:12.5px;line-height:1.55}
-    #volatile-notice span{flex:1 1 300px}
-    #volatile-notice b{color:#8a5b0f}
-    #volatile-notice .btn{min-height:30px;padding:5px 11px;font-size:12px;border-color:#e3c894;color:#6b4a12;background:#fffdf8}
-    #volatile-notice .btn.primary{background:#1d8c73;border-color:#1d8c73;color:#fff}
+    #volatile-notice,#sync-notice{position:sticky;top:0;z-index:60;display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:9px 16px;background:#fff6e6;border-bottom:1px solid #f0d9ae;color:#6b4a12;font-size:12.5px;line-height:1.55}
+    #volatile-notice span,#sync-notice span{flex:1 1 300px}
+    #volatile-notice b,#sync-notice b{color:#8a5b0f}
+    #volatile-notice .btn,#sync-notice .btn{min-height:30px;padding:5px 11px;font-size:12px;border-color:#e3c894;color:#6b4a12;background:#fffdf8}
+    #volatile-notice .btn.primary,#sync-notice .btn.primary{background:#1d8c73;border-color:#1d8c73;color:#fff}
+    /* 未同步提醒用更醒目的暖红，与「预览面板」提示条区分开：这条意味着线上链接还停在上一版。 */
+    #sync-notice{background:#fdf0ec;border-bottom-color:#efc6ba;color:#7c3a28}
+    #sync-notice b{color:#b0452b}
+    #sync-notice .btn{border-color:#e6bdb0;color:#7c3a28}
+    #data-stamp{color:#7b8b90;font-size:11.5px;letter-spacing:.02em}
   </style>
 </head>
 <body>
@@ -81,13 +86,13 @@
     </section>
     <div class="note reveal"><strong>出发前只记 4 件事：</strong> 天文台核心区需预约，公共观海栈道免预约；5/1–10/7 的周末/法定假日，自驾进入大鹏南部片区还需深圳交警预约通行；鹿嘴山庄建议提前电话确认房型和车辆登记；凌晨爬升请穿防滑鞋、带头灯和饮水，恶劣天气以官方状态为准。</div>
   </main>
-  <footer class="wrap"><span>Made for a slower weekend · DAPENG, SHENZHEN</span><span class="sources">信息参考：<a href="https://weather.121.com.cn/sztwt/#/gr" target="_blank" rel="noreferrer">深圳天文台预约</a> · <a href="https://lbs.qq.com" target="_blank" rel="noreferrer">腾讯位置服务</a></span></footer>
+  <footer class="wrap"><span>Made for a slower weekend · DAPENG, SHENZHEN</span><span class="mono" id="data-stamp" title="这串指纹由当前显示的行程内容算出：在预览面板和线上链接里各看一次，指纹相同就说明看到的是同一版">数据指纹 —</span><span class="sources">信息参考：<a href="https://weather.121.com.cn/sztwt/#/gr" target="_blank" rel="noreferrer">深圳天文台预约</a> · <a href="https://lbs.qq.com" target="_blank" rel="noreferrer">腾讯位置服务</a></span></footer>
   <script>
     const days = {
       1: {title:'DAY 01 / 暗夜抵达', subtitle:'周四 24 日 · 先睡好，再看星星', distance:'约 38 km', mapTitle:'西涌 · 暗夜社区', mapCaption:'按顺序串起今晚的 5 个落点', points:[
         {time:'02:30', type:'出发', name:'五和伍城市广场地面停车场-入口', desc:'下班先吃饱、补水、检查车况；睡一觉再出发，睡到两点', meta:'广东省深圳市龙岗区永香西路26-2号附近(五和地铁站H口步行430米)', lat:22.622131, lng:114.061689},
         {time:'05:00', type:'景点', name:'深圳市天文台', desc:'进入天文台，网上说五点有接驳车了，我们可以搭乘接驳车上山，然后六点左右是日出🌅', meta:'广东省深圳市龙岗区大鹏新区南澳街道西涌天文路；预计五点开始上山，如果早到，我们可以提前慢慢走上去', lat:22.479719, lng:114.559438},
-        {time:'09:00', type:'美食', name:'拾吉饮品小吃早餐', desc:'地点不确定，到时候看路上哪里有吃的早餐', meta:'广东省深圳市龙岗区南澳街道大鹏新区南澳街道东山社区东山村1号101', lat:22.554352, lng:114.52971},
+        {time:'09:00', type:'美食', name:'拾吉饮品小吃早餐（还不确定去不去这家，这个作为保底）', desc:'地点不确定，到时候看路上哪里有吃的早餐', meta:'广东省深圳市龙岗区南澳街道大鹏新区南澳街道东山社区东山村1号101', lat:22.554352, lng:114.52971},
         {time:'12:00', type:'住宿', name:'MOMO小院民宿', desc:'入住酒店休息，补个觉，吃点东西下午出发鹅公湾', meta:'广东省深圳市龙岗区大鹏新区南澳街道新大社区新屋仔村17号101栋', lat:22.531579, lng:114.516444},
         {time:'15:00', type:'景点', name:'鹅公湾', desc:'去喝咖啡，拍照等', meta:'广东省深圳市龙岗区旭阳海洋牧场旅游景区', lat:22.491964, lng:114.490975}
       ]},
@@ -101,6 +106,8 @@
     };
     let currentDay=1, selectedIndex=0, map, markerLayer, lineLayer, infoWindow, picking=false, searchService, searchMarkerLayer, searchPinGeometry;
     const STORAGE_KEY='dapeng-2day-itinerary-v2';
+    /* 内容版本：每次把新行程合进这一版文件时同步更新，用来判断线上是不是最新。 */
+    const BUILD_DATE='2026-09-23';
     /* 本机快照：主键丢了（换端口/换设备/被清理）时还能回退，最多留 8 份。 */
     const SNAP_KEY='dapeng-2day-snapshots-v1';
     let hadLocalSaved=false;
@@ -198,7 +205,7 @@
             break;
           }
         }
-        if(!done){setDirty(true);setGithubStatus('同步失败（已存本机）：'+lastErr+'。'+ghWriteHint(lastErr))}
+        if(!done){setDirty(true);setGithubStatus('同步失败（已存本机）：'+lastErr+'。'+ghWriteHint(lastErr));showSyncNotice()}
       }finally{githubAutoBusy=false}
     }
     /* 连接诊断：一次跑完 5 条通道，直接指出是网络、Token、权限还是路径的问题。 */
@@ -213,14 +220,14 @@
       paint()}
     function saveGithubConfig(c){try{localStorage.setItem(GITHUB_CONFIG_KEY,JSON.stringify(c))}catch(e){}}
     const DIRTY_KEY='dapeng-2day-dirty-v1';
-    function setDirty(v){try{v?localStorage.setItem(DIRTY_KEY,'1'):localStorage.removeItem(DIRTY_KEY)}catch(e){}}
+    function setDirty(v){try{v?localStorage.setItem(DIRTY_KEY,'1'):localStorage.removeItem(DIRTY_KEY)}catch(e){}paintStamp()}
     function isDirty(){try{return localStorage.getItem(DIRTY_KEY)==='1'}catch(e){return false}}
     let githubAutoTimer=0, githubAutoBusy=false;
     /* 未填写 Token 时也要落盘到本机，否则"已存本机"这句提示与实际不符。 */
     function scheduleGithubAutoSave(){clearTimeout(githubAutoTimer);if(!githubConfig().token){if(commitFormSilently()){setDirty(true);setGithubStatus('已存本机；填写 Token 后才会自动同步到 GitHub')}return}githubAutoTimer=setTimeout(()=>{if(!githubAutoBusy)githubSave(true)},1200)}
     function bindAutoSave(){['edit-time','edit-type','edit-name','edit-desc','edit-meta','edit-lat','edit-lng'].forEach(id=>{const el=$('#'+id);el.addEventListener('input',scheduleGithubAutoSave);el.addEventListener('change',scheduleGithubAutoSave)});['github-owner','github-repo','github-token','github-path','github-api-base'].forEach(id=>$('#'+id).addEventListener('change',()=>{saveGithubConfig(githubConfig());setGithubStatus('同步配置已保存在本机')}))}
     function setGithubStatus(text){$('#github-sync-status').textContent=text}
-    function renderDay(day){currentDay=day;const data=days[day];if(selectedIndex>=data.points.length)selectedIndex=Math.max(0,data.points.length-1);$('#day-title').textContent=data.title;$('#day-subtitle').textContent=data.subtitle;$('#day-distance').textContent=data.distance;$('#map-title').textContent=data.mapTitle;$('#map-caption').textContent=`${data.points.length} 个落点 · 可编辑定位`;document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',+b.dataset.day===day));$('#timeline').innerHTML=data.points.map((p,i)=>`<article class="poi-card ${i===selectedIndex?'is-active':''}" tabindex="0" data-index="${i}" data-type="${escapeHtml(p.type)}" aria-label="${escapeHtml(p.time)} ${escapeHtml(p.name)}"><div class="time">${escapeHtml(p.time)}</div><i class="dot" aria-hidden="true"></i><div><div class="card-title"><h3>${escapeHtml(p.name)}</h3><span class="tag">${escapeHtml(p.type)}</span></div><p>${escapeHtml(p.desc)}</p><div class="meta"><span>${escapeHtml(p.meta)}</span></div></div></article>`).join('');document.querySelectorAll('.poi-card').forEach(card=>{card.addEventListener('click',()=>selectPoint(+card.dataset.index));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectPoint(+card.dataset.index)}})});renderEditList();fillForm(data.points[selectedIndex]);try{drawMap(data.points)}catch(e){console.warn('地图绘制失败，编辑功能不受影响',e)}}
+    function renderDay(day){currentDay=day;const data=days[day];if(selectedIndex>=data.points.length)selectedIndex=Math.max(0,data.points.length-1);$('#day-title').textContent=data.title;$('#day-subtitle').textContent=data.subtitle;$('#day-distance').textContent=data.distance;$('#map-title').textContent=data.mapTitle;$('#map-caption').textContent=`${data.points.length} 个落点 · 可编辑定位`;document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',+b.dataset.day===day));$('#timeline').innerHTML=data.points.map((p,i)=>`<article class="poi-card ${i===selectedIndex?'is-active':''}" tabindex="0" data-index="${i}" data-type="${escapeHtml(p.type)}" aria-label="${escapeHtml(p.time)} ${escapeHtml(p.name)}"><div class="time">${escapeHtml(p.time)}</div><i class="dot" aria-hidden="true"></i><div><div class="card-title"><h3>${escapeHtml(p.name)}</h3><span class="tag">${escapeHtml(p.type)}</span></div><p>${escapeHtml(p.desc)}</p><div class="meta"><span>${escapeHtml(p.meta)}</span></div></div></article>`).join('');document.querySelectorAll('.poi-card').forEach(card=>{card.addEventListener('click',()=>selectPoint(+card.dataset.index));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectPoint(+card.dataset.index)}})});renderEditList();fillForm(data.points[selectedIndex]);try{drawMap(data.points)}catch(e){console.warn('地图绘制失败，编辑功能不受影响',e)}paintStamp()}
     function selectPoint(i){selectedIndex=i;document.querySelectorAll('.poi-card').forEach((c,n)=>c.classList.toggle('is-active',n===i));fillForm(days[currentDay].points[i]);focusPoint(i);renderEditList();}
     function fillForm(p){if(!p)return;$('#edit-time').value=p.time||'';$('#edit-type').value=p.type||'景点';$('#edit-name').value=p.name||'';$('#edit-desc').value=p.desc||'';$('#edit-meta').value=p.meta||'';$('#edit-lat').value=Number(p.lat).toFixed(6);$('#edit-lng').value=Number(p.lng).toFixed(6)}
     function readForm(){return {time:$('#edit-time').value,type:$('#edit-type').value,name:$('#edit-name').value.trim(),desc:$('#edit-desc').value.trim(),meta:$('#edit-meta').value.trim(),lat:Number($('#edit-lat').value),lng:Number($('#edit-lng').value)}}
@@ -624,9 +631,31 @@
       const ex=document.getElementById('volatile-export');if(ex)ex.addEventListener('click',()=>{if(typeof exportData==='function')exportData()});
       const cl=document.getElementById('volatile-close');if(cl)cl.addEventListener('click',()=>{bar.remove()});
     }
+    /* 行程指纹：把「此刻屏幕上显示的这份行程」压成 8 位短码。
+       用途很直接——在预览面板看一眼、在线上链接看一眼，两处指纹一样就是同一版；
+       不一样，就说明有一边的内容没同步过去。 */
+    function dataStamp(){const s=JSON.stringify(days);let h=5381;for(let i=0;i<s.length;i++)h=((h*33)^s.charCodeAt(i))>>>0;return h.toString(16).padStart(8,'0')}
+    function paintStamp(){const el=document.getElementById('data-stamp');if(!el)return;
+      el.textContent='数据指纹 '+dataStamp()+' · '+pointCount()+' 个点位 · '+(isDirty()?'本机有未同步改动':'已同步到线上')+' · 内容版本 '+BUILD_DATE}
+    /* 「改了但没推上去」必须显式说出来：线上链接读的是仓库里的文件，本机改了不等于线上改了。
+       只在已经填了 Token 的前提下提示——没填 Token 时「只存本机」本来就是预期行为。 */
+    function showSyncNotice(){
+      if(document.getElementById('sync-notice')||!isDirty()||!githubConfig().token)return;
+      const list=snapshots();
+      const when=list.length?new Date(list[0].t).toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}):'刚刚';
+      const bar=document.createElement('div');bar.id='sync-notice';
+      bar.innerHTML='<span><b>本机改动还没同步到线上</b>：最近一次保存于 '+escapeHtml(when)+'，但推送 GitHub 没有成功，所以现在打开线上链接看到的仍是<b>上一版</b>内容。点右侧按钮重试即可补齐。</span><button class="btn primary" type="button" id="sync-notice-now">立即同步到线上</button><button class="btn" type="button" id="sync-notice-later">稍后</button>';
+      document.body.insertBefore(bar,document.body.firstChild);
+      document.getElementById('sync-notice-now').addEventListener('click',async()=>{
+        await githubSave(false);
+        if(!isDirty()){bar.remove();paintStamp();setStatus('已同步到线上，刷新线上链接就能看到最新版')}
+        else setStatus('仍然没同步成功，请点「连接诊断」看是哪条通道不通');
+      });
+      document.getElementById('sync-notice-later').addEventListener('click',()=>bar.remove());
+    }
     function drawMap(points){if(!window.TMap){$('#map-fallback').style.display='flex';return}$('#map-fallback').style.display='none';if(!map){map=new TMap.Map('map',{center:new TMap.LatLng(points[0].lat,points[0].lng),zoom:12.4});map.on('click',e=>applyPickedLocation(e.latLng));placeDefaultControls();}
       /* 地图 SDK 加载失败或无网络时，点位与连线照常保留在行程卡片中，编辑不受影响。 */const geometries=points.map((p,i)=>({id:String(i),styleId:'pin',position:new TMap.LatLng(p.lat,p.lng),properties:{title:p.name}}));if(markerLayer){markerLayer.setGeometries(geometries)}else{markerLayer=new TMap.MultiMarker({map,styles:{pin:new TMap.MarkerStyle({width:34,height:34,anchor:{x:17,y:30},src:'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34"><path d="M17 1C8.2 1 2 7.5 2 15.2 2 25 17 33 17 33s14.9-8 14.9-17.8C31.9 7.5 25.7 1 17 1z" fill="#1d8c73" stroke="white" stroke-width="2"/><circle cx="17" cy="15" r="5" fill="white"/></svg>`)})},geometries});}const paths=points.map(p=>new TMap.LatLng(p.lat,p.lng));if(lineLayer){lineLayer.setGeometries([{id:'route',styleId:'route',paths}])}else{lineLayer=new TMap.MultiPolyline({map,styles:{route:new TMap.PolylineStyle({color:'#1d8c73',width:4,borderWidth:2,borderColor:'#ffffff',lineCap:'round',lineJoin:'round'})},geometries:[{id:'route',styleId:'route',paths}]});}const bounds=new TMap.LatLngBounds(new TMap.LatLng(Math.min(...points.map(p=>p.lat)),Math.min(...points.map(p=>p.lng))),new TMap.LatLng(Math.max(...points.map(p=>p.lat)),Math.max(...points.map(p=>p.lng))));map.fitBounds(bounds,{padding:80});}
-    loadSaved();loadGithubConfig();tmapSetupStatus();hideTmapAuthNotice();previewNotice();$('#tmap-key-save').addEventListener('click',()=>{const v=$('#tmap-key').value.trim();try{v?localStorage.setItem(TMAP_KEY,v):localStorage.removeItem(TMAP_KEY)}catch(e){}if(typeof commitFormSilently==='function')commitFormSilently();setGithubStatus(v?'地图 Key 已保存，正在应用…':'地图 Key 已清除，正在应用…');location.reload()});$('#tmap-key-clear').addEventListener('click',()=>{try{localStorage.removeItem(TMAP_KEY)}catch(e){}$('#tmap-key').value='';tmapSetupStatus();setStatus('已清除本机地图 Key');if(typeof commitFormSilently==='function')commitFormSilently();location.reload()});document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{selectedIndex=0;renderDay(+b.dataset.day)}));$('#map-search-btn').addEventListener('click',searchPlace);$('#edit-place-search-btn').addEventListener('click',searchEditPlace);$('#edit-place-search-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchEditPlace()}if(e.key==='Escape'){$('#edit-search-results').classList.remove('show')}});$('#map-search-input').addEventListener('click',()=>$('#edit-search-results').classList.remove('show'));$('#map-search-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchPlace()}if(e.key==='Escape')closeSearchResults()});document.addEventListener('click',e=>{if(!e.target.closest('.map-search'))closeSearchResults()});$('#save-point').addEventListener('click',savePoint);$('#add-point').addEventListener('click',addPoint);$('#reset-data').addEventListener('click',resetData);$('#export-data').addEventListener('click',exportData);$('#import-data').addEventListener('click',()=>$('#import-file').click());$('#import-file').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(f)importData(f);e.target.value=''});$('#rollback-snapshot').addEventListener('click',rollbackSnapshot);$('#pick-map').addEventListener('click',startPick);$('#cancel-pick').addEventListener('click',stopPick);$('#use-location').addEventListener('click',useCurrentLocation);$('#github-load').addEventListener('click',()=>githubRead());$('#github-save').addEventListener('click',()=>githubSave());$('#github-diag').addEventListener('click',()=>githubDiagnose());bindAutoSave();renderDay(1);window.onTMapReady=()=>{try{drawMap(days[currentDay].points)}catch(e){console.warn('地图初始化失败',e)}};if(!isDirty()&&!hadLocalSaved)githubRead(true);else if(hadLocalSaved)setGithubStatus('已载入本机保存的行程（'+pointCount()+' 个点位）；填 Token 即可同步到仓库');const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+    loadSaved();loadGithubConfig();tmapSetupStatus();hideTmapAuthNotice();previewNotice();paintStamp();showSyncNotice();$('#tmap-key-save').addEventListener('click',()=>{const v=$('#tmap-key').value.trim();try{v?localStorage.setItem(TMAP_KEY,v):localStorage.removeItem(TMAP_KEY)}catch(e){}if(typeof commitFormSilently==='function')commitFormSilently();setGithubStatus(v?'地图 Key 已保存，正在应用…':'地图 Key 已清除，正在应用…');location.reload()});$('#tmap-key-clear').addEventListener('click',()=>{try{localStorage.removeItem(TMAP_KEY)}catch(e){}$('#tmap-key').value='';tmapSetupStatus();setStatus('已清除本机地图 Key');if(typeof commitFormSilently==='function')commitFormSilently();location.reload()});document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{selectedIndex=0;renderDay(+b.dataset.day)}));$('#map-search-btn').addEventListener('click',searchPlace);$('#edit-place-search-btn').addEventListener('click',searchEditPlace);$('#edit-place-search-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchEditPlace()}if(e.key==='Escape'){$('#edit-search-results').classList.remove('show')}});$('#map-search-input').addEventListener('click',()=>$('#edit-search-results').classList.remove('show'));$('#map-search-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchPlace()}if(e.key==='Escape')closeSearchResults()});document.addEventListener('click',e=>{if(!e.target.closest('.map-search'))closeSearchResults()});$('#save-point').addEventListener('click',savePoint);$('#add-point').addEventListener('click',addPoint);$('#reset-data').addEventListener('click',resetData);$('#export-data').addEventListener('click',exportData);$('#import-data').addEventListener('click',()=>$('#import-file').click());$('#import-file').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(f)importData(f);e.target.value=''});$('#rollback-snapshot').addEventListener('click',rollbackSnapshot);$('#pick-map').addEventListener('click',startPick);$('#cancel-pick').addEventListener('click',stopPick);$('#use-location').addEventListener('click',useCurrentLocation);$('#github-load').addEventListener('click',()=>githubRead());$('#github-save').addEventListener('click',()=>githubSave());$('#github-diag').addEventListener('click',()=>githubDiagnose());bindAutoSave();renderDay(1);window.onTMapReady=()=>{try{drawMap(days[currentDay].points)}catch(e){console.warn('地图初始化失败',e)}};if(!isDirty()&&!hadLocalSaved)githubRead(true);else if(hadLocalSaved)setGithubStatus('已载入本机保存的行程（'+pointCount()+' 个点位）；填 Token 即可同步到仓库');const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
   </script>
 </body>
 </html>
