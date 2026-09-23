@@ -1,10 +1,10 @@
 {
   "1": {
-    "title": "DAY 01 / 暗夜抵达",
-    "subtitle": "周四 24 日 · 先睡好，再看星星",
-    "distance": "约 38 km",
-    "mapTitle": "西涌 · 暗夜社区",
-    "mapCaption": "按顺序串起今晚的 5 个落点",
+    "title": "DAY 01 / 凌晨出发 · 天文台日出",
+    "subtitle": "周四 24 日 · 02:30 出发，6 点看日出",
+    "distance": "约 108 km",
+    "mapTitle": "西涌天文台 → 鹅公湾",
+    "mapCaption": "按顺序串起今天 5 个落点",
     "points": [
       {
         "time": "02:30",
@@ -54,11 +54,11 @@
     ]
   },
   "2": {
-    "title": "DAY 02 / 山海慢游",
-    "subtitle": "周五 25 日 · 海岸线把时间拉长",
-    "distance": "约 30 km",
-    "mapTitle": "杨梅坑 → 较场尾",
-    "mapCaption": "把海岸、古城与晚餐串成一条线",
+    "title": "DAY 02 / 海岸慢游",
+    "subtitle": "周五 25 日 · 鹿嘴山庄到较场尾",
+    "distance": "约 36 km",
+    "mapTitle": "鹿嘴山庄 → 较场尾",
+    "mapCaption": "把海岸线、玻璃海与海鲜晚餐串成一条线",
     "points": [
       {
         "time": "09:30",
